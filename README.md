@@ -760,6 +760,13 @@ Venus commands above.
   same option names as the Venus command above, though this model sends
   different codes for them and has no `trading` mode. The device reports its
   mode back, so the *Working Mode* entity shows its real state.
+- `schedule/[1-6]/enabled`: Enables or disables a manual-mode schedule slot.
+- `schedule/[1-6]/start-time`: Sets the slot start time in `HH:MM` format.
+- `schedule/[1-6]/end-time`: Sets the slot end time in `HH:MM` format.
+- `schedule/[1-6]/power`: Sets the slot power in watts.
+- `schedule/[1-6]/direction`: Sets `charge`, `discharge` or `selfConsumption`.
+- `schedule/[1-6]/weekday`: Sets active weekdays using digits 0-6, where 0 is
+  Monday and 6 is Sunday.
 - `meter-mac`: Sets the MAC address used when configuring an external meter
   (12 hex digits, no separators). Shows the last value set. Disabled by default.
 - `meter-type`: Configures the external meter (`ct001`, `shellyPro3em`, `ct002`,
@@ -772,9 +779,9 @@ Venus commands above.
 - `restart`: Reboots the device. Disabled by default.
 - `factory-reset`: Resets the device to factory settings. Disabled by default.
 
-**Beta.** The read-only refresh command has been confirmed on a real device.
-The other commands were read out of the Marstek app rather than captured from
-a real device, so they have not been confirmed end to end.
+**Beta.** Runtime polling and manual schedule commands have been confirmed on a
+real device. The other command formats were read out of the Marstek app rather
+than captured end to end, so those writes remain experimental.
 
 The Venus E Mini runs a second generation of Marstek's Venus firmware, together
 with the Venus X and Venus G. It numbers its commands differently from the

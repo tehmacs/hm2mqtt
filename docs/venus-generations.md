@@ -131,6 +131,7 @@ either — always read the model's own table.
 | ------- | ------- | -------- |
 | Get NOW power | `cd=59` | `CMD_GET_NOW_POWER` |
 | Bluetooth advertising | `cd=55,adv=<0\|1>` | `CMD_SET_BLUETOOTH_STATE` |
+| Schedule slot 1–6 | `cd=<47–52>,mN=<0\|1>,mpN=<W>,msN=<1\|2\|3>,stN=<HH:mm>,etN=<HH:mm>,reN=<mask>` | `CMD_SET_MODE_MANUAL_INFO` |
 | Configure server | `cd=60,ser=<n>` | `CMD_SET_SERVER` |
 | Recharge type | `cd=63,ct_chg_type=<n>` | `CMD_SET_CT_CHARGE_TYPE` |
 | Configure WiFi | *(Bluetooth only)* | `CMD_SET_WIFI` |
@@ -169,6 +170,7 @@ Of the second generation, only the Venus E Mini is supported, and only partly:
 - `cd=55,adv=` bluetooth advertising — implemented
 - `cd=44,do=` depth of discharge — implemented
 - `cd=02,md=` working mode — implemented
+- `cd=47` through `cd=52` manual-mode schedule slots — implemented
 - `cd=18,meter=,mac=` meter type — implemented
 - `cd=05` factory reset — implemented
 - `cd=61` reboot — implemented

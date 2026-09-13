@@ -1928,6 +1928,194 @@ const commandTestCases: CommandTestCase[] = [
     expectedOutput: null,
   },
 
+  {
+    description: 'Venus E Mini schedule slot 1 enabled',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {
+          enabled: false,
+          power: 700,
+          direction: 'charge',
+          startTime: '10:00',
+          endTime: '18:30',
+          weekday: '0123456',
+          repeatRaw: 127,
+        },
+      ],
+    },
+    command: 'schedule/1/enabled',
+    input: 'true',
+    expectedOutput: 'cd=47,m1=1,mp1=700,ms1=1,st1=10:00,et1=18:30,re1=127',
+  },
+  {
+    description: 'Venus E Mini schedule slot 1 direction',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {
+          enabled: true,
+          power: 700,
+          direction: 'charge',
+          startTime: '10:00',
+          endTime: '18:30',
+          repeatRaw: 127,
+        },
+      ],
+    },
+    command: 'schedule/1/direction',
+    input: 'discharge',
+    expectedOutput: 'cd=47,m1=1,mp1=700,ms1=2,st1=10:00,et1=18:30,re1=127',
+  },
+  {
+    description: 'Venus E Mini schedule slot 1 start time is zero-padded',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {
+          enabled: true,
+          power: 700,
+          direction: 'charge',
+          startTime: '10:00',
+          endTime: '18:30',
+          repeatRaw: 127,
+        },
+      ],
+    },
+    command: 'schedule/1/start-time',
+    input: '8:05',
+    expectedOutput: 'cd=47,m1=1,mp1=700,ms1=1,st1=08:05,et1=18:30,re1=127',
+  },
+  {
+    description: 'Venus E Mini schedule slot 1 weekdays use Monday as bit zero',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {
+          enabled: true,
+          power: 700,
+          direction: 'charge',
+          startTime: '10:00',
+          endTime: '18:30',
+          repeatRaw: 127,
+        },
+      ],
+    },
+    command: 'schedule/1/weekday',
+    input: '01234',
+    expectedOutput: 'cd=47,m1=1,mp1=700,ms1=1,st1=10:00,et1=18:30,re1=31',
+  },
+  {
+    description: 'Venus E Mini schedule slot 6 uses cd=52',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          enabled: false,
+          power: 0,
+          direction: 'selfConsumption',
+          startTime: '00:00',
+          endTime: '00:00',
+          repeatRaw: 0,
+        },
+      ],
+    },
+    command: 'schedule/6/power',
+    input: '432',
+    expectedOutput: 'cd=52,m6=0,mp6=432,ms6=3,st6=00:00,et6=00:00,re6=0',
+  },
+  {
+    description: 'Venus E Mini schedule rejects an invalid direction',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {
+          enabled: true,
+          power: 700,
+          direction: 'charge',
+          startTime: '10:00',
+          endTime: '18:30',
+          repeatRaw: 127,
+        },
+      ],
+    },
+    command: 'schedule/1/direction',
+    input: 'unknown',
+    expectedOutput: null,
+  },
+  {
+    description: 'Venus E Mini schedule rejects an inherited property as direction',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {
+          enabled: true,
+          power: 700,
+          direction: 'charge',
+          startTime: '10:00',
+          endTime: '18:30',
+          repeatRaw: 127,
+        },
+      ],
+    },
+    command: 'schedule/1/direction',
+    input: 'toString',
+    expectedOutput: null,
+  },
+  {
+    description: 'Venus E Mini schedule accepts maximum power',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {
+          enabled: true,
+          power: 700,
+          direction: 'charge',
+          startTime: '10:00',
+          endTime: '18:30',
+          repeatRaw: 127,
+        },
+      ],
+    },
+    command: 'schedule/1/power',
+    input: '1500',
+    expectedOutput: 'cd=47,m1=1,mp1=1500,ms1=1,st1=10:00,et1=18:30,re1=127',
+  },
+  {
+    description: 'Venus E Mini schedule rejects power above maximum',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {
+          enabled: true,
+          power: 700,
+          direction: 'charge',
+          startTime: '10:00',
+          endTime: '18:30',
+          repeatRaw: 127,
+        },
+      ],
+    },
+    command: 'schedule/1/power',
+    input: '1501',
+    expectedOutput: null,
+  },
+  {
+    description: 'Venus E Mini schedule rejects incomplete state',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [{ enabled: true }],
+    },
+    command: 'schedule/1/enabled',
+    input: 'false',
+    expectedOutput: null,
+  },
+
   // Factory reset takes no rs parameter on this generation.
   {
     description: 'Venus E Mini factory-reset with PRESS',
