@@ -137,6 +137,8 @@ either — always read the model's own table.
 | Configure WiFi | *(Bluetooth only)* | `CMD_SET_WIFI` |
 
 The Mini has no `cd=19`, which is why hm2mqtt polls it for power with `cd=59`.
+Its schedule slots must be configured consecutively; out-of-sequence writes can
+make the device stop responding.
 
 ## A `cd=60` ambiguity worth knowing about
 

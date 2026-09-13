@@ -767,6 +767,11 @@ Venus commands above.
 - `schedule/[1-6]/direction`: Sets `charge`, `discharge` or `selfConsumption`.
 - `schedule/[1-6]/weekday`: Sets active weekdays using digits 0-6, where 0 is
   Monday and 6 is Sunday.
+
+Schedule slots must be configured consecutively. A later slot cannot be changed
+while an earlier slot is empty because out-of-sequence writes can make the
+device stop responding. A disabled slot with retained schedule values still
+counts as configured.
 - `meter-mac`: Sets the MAC address used when configuring an external meter
   (12 hex digits, no separators). Shows the last value set. Disabled by default.
 - `meter-type`: Configures the external meter (`ct001`, `shellyPro3em`, `ct002`,

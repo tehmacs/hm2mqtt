@@ -917,6 +917,16 @@ function registerVenusMiniRuntimeInfoMessage(message: BuildMessageFn) {
         update: Partial<VenusMiniTimePeriod>,
       ) => {
         updateDeviceState(state => {
+          const missingPreviousSlot = state.timePeriods
+            ?.slice(0, idx)
+            .findIndex((period, periodIndex) => !buildMiniScheduleCommand(periodIndex + 1, period));
+          if (missingPreviousSlot != null && missingPreviousSlot >= 0) {
+            logger.warn(
+              `Schedule slot ${i} cannot be configured before slot ${missingPreviousSlot + 1}`,
+            );
+            return;
+          }
+
           const current = state.timePeriods?.[idx];
           if (!current) {
             logger.warn(`Schedule slot ${i} not found in device state`);
