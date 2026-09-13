@@ -140,6 +140,30 @@ The Mini has no `cd=19`, which is why hm2mqtt polls it for power with `cd=59`.
 Its schedule slots must be configured consecutively; out-of-sequence writes can
 make the device stop responding.
 
+### Venus E Mini schedule slot behavior
+
+Live tests established that the six MQTT slots and the schedules shown by the
+Marstek app are not the same thing:
+
+- The battery always reports all six slots.
+- Setting `mN=0` disables a slot but does not erase its other values.
+- Removing a schedule in the app leaves the old power, direction, times and
+  repeat mask in the battery. The app hides that slot and may reuse it later.
+- Creating a complete slot over MQTT with `mN=0` does not make it appear in the
+  app.
+- Creating it with `mN=1` makes it appear. Setting `mN=0` afterward disables it
+  but leaves it visible in the app.
+
+This means MQTT telemetry cannot tell whether the app will show a disabled slot.
+The app keeps additional state that is not present in the device response.
+Home Assistant should continue to show the values reported by the battery.
+
+Schedule creation must be atomic: collect a complete draft, then send all slot
+fields in one command when the user selects *Apply*. hm2mqtt must not
+automatically enable and then disable a schedule to make it visible in the app.
+That two-command workaround could briefly start charging or discharging when
+the configured time range includes the current time.
+
 ## A `cd=60` ambiguity worth knowing about
 
 `cd=60` carries two different meanings depending on which parameter it takes.

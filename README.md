@@ -768,10 +768,31 @@ Venus commands above.
 - `schedule/[1-6]/weekday`: Sets active weekdays using digits 0-6, where 0 is
   Monday and 6 is Sunday.
 
-Schedule slots must be configured consecutively. A later slot cannot be changed
-while an earlier slot is empty because out-of-sequence writes can make the
-device stop responding. A disabled slot with retained schedule values still
-counts as configured.
+#### Venus E Mini schedule behavior
+
+The battery always reports all six schedule slots. Home Assistant therefore
+shows old values even after a schedule is removed in the Marstek app.
+
+- Disabling a schedule sets its enabled value to off but keeps its power, times,
+  direction and weekdays.
+- Removing a schedule in the app also leaves those old values in the battery.
+  The app hides the slot and may overwrite it when a new schedule is added.
+- A disabled slot created directly through MQTT is shown in Home Assistant but
+  not in the Marstek app.
+- A slot created as enabled appears in the app. If it is then disabled, it stays
+  visible in the app.
+
+Schedule slots must be configured in order. Writing a later slot while an
+earlier slot is empty can make the battery stop responding.
+
+hm2mqtt must not briefly enable a new schedule just to make it appear in the
+Marstek app. The battery could start charging or discharging before the second
+command disables it. New schedules should instead be prepared as a complete
+draft and sent once with an explicit *Apply* action. A new disabled schedule may
+remain hidden in the Marstek app. Users who need it to appear there must create
+it as enabled and disable it separately after the battery confirms the first
+change.
+
 - `meter-mac`: Sets the MAC address used when configuring an external meter
   (12 hex digits, no separators). Shows the last value set. Disabled by default.
 - `meter-type`: Configures the external meter (`ct001`, `shellyPro3em`, `ct002`,

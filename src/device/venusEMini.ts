@@ -84,10 +84,10 @@ import { divide, equalsBoolean, identity, map, negateIfPositive, number } from '
  *   first-generation Venus `cd=4`, which has no `wy` at all, takes local time.
  *   The app calls timeZoneOffset once either way, so it does not settle which
  *   convention this command follows. Getting it wrong sets the device clock off
- *   by the offset, which is the bug the B2500 shipped once already; and since
- *   nothing here drives the Mini's schedules yet, a sync button would carry
- *   that risk without buying anything. Pressing it in the app with a device
- *   whose reported `time` is watched would settle it in one go.
+ *   by the offset, which is the bug the B2500 shipped once already. Since the
+ *   Mini's schedules depend on that clock, a sync button must not be added until
+ *   the convention is known. Pressing it in the app with a device whose
+ *   reported `time` is watched would settle it in one go.
  * - `CMD_SET_WIFI` (configure device WiFi) carries network credentials, and is
  *   Bluetooth-only anyway - it has no MQTT form.
  */
