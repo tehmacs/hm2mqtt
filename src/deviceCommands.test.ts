@@ -2121,6 +2121,114 @@ const commandTestCases: CommandTestCase[] = [
     expectedOutput: null,
   },
   {
+    description: 'Venus E Mini schedule rejects overlap with a disabled complete slot',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {
+          enabled: false,
+          power: 700,
+          direction: 'charge',
+          startTime: '10:00',
+          endTime: '12:00',
+          repeatRaw: 31,
+        },
+        {
+          enabled: false,
+          power: 500,
+          direction: 'discharge',
+          startTime: '11:00',
+          endTime: '13:00',
+          repeatRaw: 31,
+        },
+      ],
+    },
+    command: 'schedule/2/power',
+    input: '600',
+    expectedOutput: null,
+  },
+  {
+    description: 'Venus E Mini schedule accepts the same time on different weekdays',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {
+          enabled: false,
+          power: 700,
+          direction: 'charge',
+          startTime: '10:00',
+          endTime: '12:00',
+          repeatRaw: 1,
+        },
+        {
+          enabled: false,
+          power: 500,
+          direction: 'discharge',
+          startTime: '10:00',
+          endTime: '12:00',
+          repeatRaw: 2,
+        },
+      ],
+    },
+    command: 'schedule/2/power',
+    input: '600',
+    expectedOutput: 'cd=48,m2=0,mp2=600,ms2=2,st2=10:00,et2=12:00,re2=2',
+  },
+  {
+    description: 'Venus E Mini schedule accepts adjacent time ranges',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {
+          enabled: false,
+          power: 700,
+          direction: 'charge',
+          startTime: '10:00',
+          endTime: '12:00',
+          repeatRaw: 1,
+        },
+        {
+          enabled: false,
+          power: 500,
+          direction: 'discharge',
+          startTime: '12:00',
+          endTime: '13:00',
+          repeatRaw: 1,
+        },
+      ],
+    },
+    command: 'schedule/2/power',
+    input: '600',
+    expectedOutput: 'cd=48,m2=0,mp2=600,ms2=2,st2=12:00,et2=13:00,re2=1',
+  },
+  {
+    description: 'Venus E Mini schedule rejects an overnight overlap on the next weekday',
+    deviceType: 'VNSEMINI-0',
+    initialState: {
+      timePeriods: [
+        {
+          enabled: false,
+          power: 700,
+          direction: 'charge',
+          startTime: '23:00',
+          endTime: '01:00',
+          repeatRaw: 1,
+        },
+        {
+          enabled: false,
+          power: 500,
+          direction: 'discharge',
+          startTime: '00:30',
+          endTime: '02:00',
+          repeatRaw: 2,
+        },
+      ],
+    },
+    command: 'schedule/2/power',
+    input: '600',
+    expectedOutput: null,
+  },
+  {
     description: 'Venus E Mini schedule rejects an invalid direction',
     deviceType: 'VNSEMINI-0',
     initialState: {

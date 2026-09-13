@@ -126,6 +126,62 @@ function formatMiniScheduleTime(time: string): string | null {
   return `${match[1].padStart(2, '0')}:${match[2]}`;
 }
 
+function miniScheduleTimeToMinutes(time: string | undefined): number | null {
+  const formatted = time && formatMiniScheduleTime(time);
+  if (!formatted) {
+    return null;
+  }
+  const [hour, minute] = formatted.split(':').map(Number);
+  return hour * 60 + minute;
+}
+
+function miniSchedulesOverlap(first: VenusMiniTimePeriod, second: VenusMiniTimePeriod): boolean {
+  if (first.repeatRaw == null || second.repeatRaw == null) {
+    return false;
+  }
+
+  const firstStart = miniScheduleTimeToMinutes(first.startTime);
+  const firstEnd = miniScheduleTimeToMinutes(first.endTime);
+  const secondStart = miniScheduleTimeToMinutes(second.startTime);
+  const secondEnd = miniScheduleTimeToMinutes(second.endTime);
+  if (
+    firstStart == null ||
+    firstEnd == null ||
+    secondStart == null ||
+    secondEnd == null ||
+    firstStart === firstEnd ||
+    secondStart === secondEnd
+  ) {
+    return false;
+  }
+
+  const minutesPerDay = 24 * 60;
+  const minutesPerWeek = 7 * minutesPerDay;
+  const intervals = (
+    repeatRaw: number,
+    start: number,
+    end: number,
+  ): Array<readonly [number, number]> =>
+    Array.from({ length: 7 }, (_, day) => day)
+      .filter(day => repeatRaw & (1 << day))
+      .map(day => {
+        const dayStart = day * minutesPerDay;
+        return [dayStart + start, dayStart + end + (end < start ? minutesPerDay : 0)] as const;
+      });
+
+  const firstIntervals = intervals(first.repeatRaw, firstStart, firstEnd);
+  const secondIntervals = intervals(second.repeatRaw, secondStart, secondEnd);
+  return firstIntervals.some(([firstFrom, firstTo]) =>
+    secondIntervals.some(([secondFrom, secondTo]) =>
+      [-minutesPerWeek, 0, minutesPerWeek].some(shift => {
+        const shiftedFrom = secondFrom + shift;
+        const shiftedTo = secondTo + shift;
+        return firstFrom < shiftedTo && shiftedFrom < firstTo;
+      }),
+    ),
+  );
+}
+
 function buildMiniScheduleCommand(slot: number, period: VenusMiniTimePeriod): string | null {
   const startTime = period.startTime && formatMiniScheduleTime(period.startTime);
   const endTime = period.endTime && formatMiniScheduleTime(period.endTime);
@@ -937,6 +993,17 @@ function registerVenusMiniRuntimeInfoMessage(message: BuildMessageFn) {
           const payload = buildMiniScheduleCommand(i, period);
           if (!payload) {
             logger.warn(`Schedule slot ${i} has incomplete or invalid state`);
+            return;
+          }
+
+          const overlappingSlot = state.timePeriods.findIndex(
+            (otherPeriod, otherIndex) =>
+              otherIndex !== idx &&
+              buildMiniScheduleCommand(otherIndex + 1, otherPeriod) != null &&
+              miniSchedulesOverlap(period, otherPeriod),
+          );
+          if (overlappingSlot >= 0) {
+            logger.warn(`Schedule slot ${i} overlaps with slot ${overlappingSlot + 1}`);
             return;
           }
 

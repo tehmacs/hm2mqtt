@@ -783,7 +783,9 @@ shows old values even after a schedule is removed in the Marstek app.
   visible in the app.
 
 Schedule slots must be configured in order. Writing a later slot while an
-earlier slot is empty can make the battery stop responding.
+earlier slot is empty can make the battery stop responding. Complete schedules
+must not overlap on any selected weekday, even when one or both schedules are
+disabled. Adjacent schedules are allowed.
 
 hm2mqtt must not briefly enable a new schedule just to make it appear in the
 Marstek app. The battery could start charging or discharging before the second

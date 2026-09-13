@@ -3,7 +3,7 @@
 
 ### Added
 
-- Support the `VNSEMINI-X` device type (e.g. `VNSEMINI-0`): the Marstek Venus E Mini, including hardware-confirmed manual-mode schedule controls. Beta: some readings and other writes remain experimental, so both may still change (discussion #425, PR #429, PR #430, PR #433, PR #437, PR #438)
+- Support the `VNSEMINI-X` device type (e.g. `VNSEMINI-0`): the Marstek Venus E Mini, including hardware-confirmed manual-mode schedule controls with safeguards against invalid slot ordering and overlapping schedules. Beta: some readings and other writes remain experimental, so both may still change (discussion #425, PR #429, PR #430, PR #433, PR #437, PR #438)
 - Venus: New *Battery Health* sensor, showing the battery's state of health. Reported by control firmware 149.2 and later, so it appears only on devices new enough to send it (PR #437)
 - Venus: Further readings the device sends but nobody has a meaning for yet are now published as diagnostic sensors, disabled by default. If you work out what one of them means, please say so (PR #437)
 

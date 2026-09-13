@@ -164,6 +164,10 @@ automatically enable and then disable a schedule to make it visible in the app.
 That two-command workaround could briefly start charging or discharging when
 the configured time range includes the current time.
 
+The app also rejects schedules whose time ranges overlap on a selected weekday.
+hm2mqtt applies the same guard to all complete slots, including disabled slots.
+Intervals that meet at one boundary do not overlap.
+
 ## A `cd=60` ambiguity worth knowing about
 
 `cd=60` carries two different meanings depending on which parameter it takes.
