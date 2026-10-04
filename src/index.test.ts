@@ -288,9 +288,15 @@ describe('MQTT Client', () => {
         __mockClient: {
           triggerEvent: (event: string, ...args: unknown[]) => void;
           publish: jest.Mock;
+          subscribe: jest.Mock;
         };
       };
       const client = mqttMock.__mockClient;
+      client.triggerEvent('connect');
+      expect(client.subscribe).toHaveBeenCalledWith(
+        expect.arrayContaining([`${DEFAULT_TOPIC_PREFIX}/VNSEMINI-0/control/mini/schedule/#`]),
+        expect.any(Function),
+      );
       const response = 'hame_energy/VNSEMINI-0/device/mini/ctrl';
       const base = `${DEFAULT_TOPIC_PREFIX}/VNSEMINI-0/control/mini`;
       const periods = [

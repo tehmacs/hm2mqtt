@@ -110,6 +110,7 @@ export type FieldDefinition<
 export interface DeviceDefinition<T extends BaseDeviceData> {
   messages: MessageDefinition<T>[];
   createControlSession?: (context: DeviceControlSessionContext) => DeviceControlSession;
+  controlSubscriptions?: readonly string[];
   /**
    * Marks a device family whose field mapping has not been verified against
    * real hardware yet. Only affects the notice logged when such a device is
@@ -248,10 +249,12 @@ export function registerDeviceDefinition(
     deviceTypes,
     beta = false,
     createControlSession,
+    controlSubscriptions,
   }: {
     deviceTypes: string[];
     beta?: boolean;
     createControlSession?: (context: DeviceControlSessionContext) => DeviceControlSession;
+    controlSubscriptions?: readonly string[];
   },
   build: ({ message }: RegisterDeviceBuildArgs) => void,
 ): void {
@@ -307,6 +310,7 @@ export function registerDeviceDefinition(
       messages,
       beta,
       createControlSession,
+      controlSubscriptions,
     });
   }
 }

@@ -334,7 +334,7 @@ export class DeviceManager {
   }
 
   /**
-   * Get all control topics for a device
+   * Get all control subscription filters for a device
    *
    * @param device - The device configuration
    * @returns Array of control topics
@@ -344,11 +344,14 @@ export class DeviceManager {
     const controlTopicBase = this.deviceTopics[deviceKey].controlSubscriptionTopic;
     const deviceDefinitions = getDeviceDefinition(device.deviceType);
 
-    return (
-      deviceDefinitions?.messages?.flatMap(msg =>
+    return [
+      ...(deviceDefinitions?.messages?.flatMap(msg =>
         msg.commands.map(({ command }) => `${controlTopicBase}/${command}`),
-      ) ?? []
-    );
+      ) ?? []),
+      ...(deviceDefinitions?.controlSubscriptions ?? []).map(
+        filter => `${controlTopicBase}/${filter}`,
+      ),
+    ];
   }
 
   hasRunningResponseTimeouts(device: Device): boolean {

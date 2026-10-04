@@ -467,6 +467,17 @@ describe('Venus E Mini guarded schedules', () => {
     expect(state().drafts[0].power).toBe(90);
   });
 
+  test('subscribes to session controls alongside ordinary device commands', () => {
+    expect(manager.getControlTopics(device)).toContain(
+      'hm2mqtt/VNSEMINI-0/control/mini-a/schedule/#',
+    );
+    expect(manager.getControlTopics(device)).toContain(
+      'hm2mqtt/VNSEMINI-0/control/mini-a/working-mode',
+    );
+    expect(manager.getControlTopics({ ...device, deviceId: 'mini-b' })).toContain(
+      'hm2mqtt/VNSEMINI-0/control/mini-b/schedule/#',
+    );
+  });
   test('Apply rejects gaps and disabled-slot overlaps but permits adjacency and different weekdays', () => {
     periods = [configured(), {}, configured({ startTime: '12:00', endTime: '13:00' })];
     enable();

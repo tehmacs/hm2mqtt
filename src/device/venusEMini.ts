@@ -1292,6 +1292,7 @@ registerDeviceDefinition(
     deviceTypes: ['VNSEMINI'],
     beta: true,
     createControlSession: context => new VenusMiniScheduleSession(context),
+    controlSubscriptions: ['schedule/#'],
   },
   ({ message }) => {
     registerVenusMiniRuntimeInfoMessage(message);
