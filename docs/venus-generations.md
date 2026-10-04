@@ -177,9 +177,11 @@ runtime response. Confirmation requires an advancing device clock, exact target
 slot read-back, unchanged other slots, and Manual mode. Pending writes block
 additional Apply requests and other normal device writes. No commands are queued.
 
-Each transaction step times out after 15 seconds. Confirmed writes have a
-ten-second cooldown. Runtime receipt and device-clock progress must remain
-within the polling interval plus 15 seconds. Failures and disconnects disable
+Preflight refresh and read-back time out after 90 seconds to accommodate
+60-second relay synchronization. Acknowledgements still time out after
+15 seconds. Confirmed writes have a ten-second cooldown. Runtime receipt and
+device-clock progress must remain within the polling interval plus 15 seconds,
+with a minimum allowance of 90 seconds. Failures and disconnects disable
 writes; recovery needs three new healthy readings and explicit re-enablement.
 Retained control and response messages cannot authorize a transaction. Guarded
 publishes use QoS 0, are not retained, and are rejected while the broker is

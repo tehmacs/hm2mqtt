@@ -14,7 +14,8 @@ import { miniRuntimePayload } from '../test/venusMiniSchedule.js';
 import {
   MINI_SCHEDULE_COOLDOWN,
   MINI_SCHEDULE_MAX_AGE,
-  MINI_SCHEDULE_TIMEOUT,
+  MINI_SCHEDULE_ACK_TIMEOUT,
+  MINI_SCHEDULE_TELEMETRY_TIMEOUT,
   buildMiniScheduleCommand,
 } from './venusMiniSchedule.js';
 
@@ -248,13 +249,47 @@ describe('Venus E Mini guarded schedules', () => {
         ack();
       }
       const count = publish.mock.calls.length;
-      jest.advanceTimersByTime(MINI_SCHEDULE_TIMEOUT);
+      const timeout =
+        phase === 'acknowledgement' ? MINI_SCHEDULE_ACK_TIMEOUT : MINI_SCHEDULE_TELEMETRY_TIMEOUT;
+      jest.advanceTimersByTime(timeout - 1);
+      expect(state().controlsEnabled).toBe(true);
+      jest.advanceTimersByTime(1);
       expect(state().controlsEnabled).toBe(false);
       expect(state().status).toMatch(/Locked/);
       command('schedule/1/apply');
       expect(publish.mock.calls.length).toBe(count);
     },
   );
+
+  test('preflight and read-back succeed with 60-second relay telemetry', () => {
+    runtime();
+    jest.advanceTimersByTime(60000);
+    runtime();
+    jest.advanceTimersByTime(60000);
+    runtime();
+    command('schedule/controls-enabled', 'true');
+    expect(state().controlsEnabled).toBe(true);
+
+    command('schedule/1/power', '90');
+    command('schedule/1/apply');
+    jest.advanceTimersByTime(15000);
+    expect(state().controlsEnabled).toBe(true);
+    expect(writes()).toHaveLength(0);
+    jest.advanceTimersByTime(45000);
+    runtime();
+    expect(writes()).toHaveLength(1);
+    ack();
+
+    periods[0] = configured({ power: 90 });
+    jest.advanceTimersByTime(15000);
+    expect(state().controlsEnabled).toBe(true);
+    expect(state().status).toMatch(/Verifying/);
+    jest.advanceTimersByTime(45000);
+    runtime();
+    expect(state().controlsEnabled).toBe(true);
+    expect(state().status).toMatch(/verified/);
+    expect(writes()).toHaveLength(1);
+  });
 
   test('a negative acknowledgement locks writes', () => {
     enable();

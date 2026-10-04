@@ -14,8 +14,12 @@ import type {
 } from '../types.js';
 
 export const MINI_SCHEDULE_POWER_MAX = 1500;
-export const MINI_SCHEDULE_MAX_AGE = globalPollInterval + 15000;
-export const MINI_SCHEDULE_TIMEOUT = 15000;
+export const MINI_SCHEDULE_ACK_TIMEOUT = 15000;
+export const MINI_SCHEDULE_TELEMETRY_TIMEOUT = 90000;
+export const MINI_SCHEDULE_MAX_AGE = Math.max(
+  globalPollInterval + 15000,
+  MINI_SCHEDULE_TELEMETRY_TIMEOUT,
+);
 export const MINI_SCHEDULE_COOLDOWN = 10000;
 const HEALTH_SAMPLES = 3;
 const directions = { charge: 1, discharge: 2, selfConsumption: 3 } as const;
@@ -217,7 +221,7 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
         if (this.pending === pending) {
           this.fail(`Schedule slot ${pending.slot} read-back timed out`);
         }
-      }, MINI_SCHEDULE_TIMEOUT);
+      }, MINI_SCHEDULE_TELEMETRY_TIMEOUT);
       this.timeout.unref();
       void this.publish('cd=01', namespace).catch(error => {
         if (this.pending === pending) {
@@ -581,7 +585,7 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
       if (this.pending === pending) {
         this.fail(`Schedule slot ${slot} preflight timed out; no automatic retry`);
       }
-    }, MINI_SCHEDULE_TIMEOUT);
+    }, MINI_SCHEDULE_TELEMETRY_TIMEOUT);
     this.timeout.unref();
     void this.publish('cd=01', pending.namespace).catch(error => {
       if (this.pending === pending) {
@@ -604,7 +608,7 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
       if (this.pending === pending) {
         this.fail(`Schedule slot ${pending.slot} acknowledgement timed out; no automatic retry`);
       }
-    }, MINI_SCHEDULE_TIMEOUT);
+    }, MINI_SCHEDULE_ACK_TIMEOUT);
     this.timeout.unref();
     void this.publish(payload, pending.namespace).catch(error => {
       if (this.pending === pending) {
