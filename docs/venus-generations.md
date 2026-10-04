@@ -177,12 +177,25 @@ runtime response. Confirmation requires an advancing device clock, exact target
 slot read-back, unchanged other slots, and Manual mode. Pending writes block
 additional Apply requests and other normal device writes. No commands are queued.
 
-Preflight refresh and read-back time out after 90 seconds to accommodate
-60-second relay synchronization. Acknowledgements still time out after
+Preflight refresh and read-back time out after 150 seconds to accommodate
+60-second relay synchronization and one skipped cycle. Acknowledgements still time out after
 15 seconds. Confirmed writes have a ten-second cooldown. Runtime receipt and
 device-clock progress must remain within the polling interval plus 15 seconds,
-with a minimum allowance of 90 seconds. Failures and disconnects disable
-writes; recovery needs three new healthy readings and explicit re-enablement.
+with a minimum allowance of 90 seconds. Temporary staleness pauses writes while
+preserving opt-in; an advancing valid snapshot restores readiness without
+retrying a command. Prolonged staleness (two polling intervals plus 30 seconds,
+at least 150 seconds), faults, command failures and disconnects lock controls.
+Recovery from a lockout needs three new healthy readings and explicit
+re-enablement.
+
+Cached packets do not count as device-clock progress and older snapshots are
+ignored for schedule decisions. A mismatched target read-back remains
+unconfirmed until a matching newer snapshot arrives or the original deadline
+expires. Changes to other slots or Manual mode still abort immediately.
+The clock-jump check
+compares elapsed time since the last clock advancement, not the latest packet.
+It allows up to 150 seconds of additional forward progress for a delayed
+snapshot catching up; larger discontinuities still lock controls.
 Retained control and response messages cannot authorize a transaction. Guarded
 publishes use QoS 0, are not retained, and are rejected while the broker is
 disconnected to avoid queued or retransmitted device writes.

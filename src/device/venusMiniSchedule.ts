@@ -15,9 +15,10 @@ import type {
 
 export const MINI_SCHEDULE_POWER_MAX = 1500;
 export const MINI_SCHEDULE_ACK_TIMEOUT = 15000;
-export const MINI_SCHEDULE_TELEMETRY_TIMEOUT = 90000;
+export const MINI_SCHEDULE_TELEMETRY_TIMEOUT = 150000;
+export const MINI_SCHEDULE_FRESH_AGE = Math.max(globalPollInterval + 15000, 90000);
 export const MINI_SCHEDULE_MAX_AGE = Math.max(
-  globalPollInterval + 15000,
+  2 * globalPollInterval + 30000,
   MINI_SCHEDULE_TELEMETRY_TIMEOUT,
 );
 export const MINI_SCHEDULE_COOLDOWN = 10000;
@@ -171,8 +172,8 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
   private healthy(): boolean {
     return (
       this.samples >= HEALTH_SAMPLES &&
-      Date.now() - this.lastReceivedAt <= MINI_SCHEDULE_MAX_AGE &&
-      Date.now() - this.lastAdvancedAt <= MINI_SCHEDULE_MAX_AGE
+      Date.now() - this.lastReceivedAt < MINI_SCHEDULE_FRESH_AGE &&
+      Date.now() - this.lastAdvancedAt < MINI_SCHEDULE_FRESH_AGE
     );
   }
 
@@ -181,12 +182,30 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
     if (!this.state.controlsEnabled) {
       return;
     }
-    const remaining =
-      Math.min(this.lastReceivedAt, this.lastAdvancedAt) + MINI_SCHEDULE_MAX_AGE - Date.now();
-    this.watchdog = setTimeout(
-      () => this.fail('Telemetry or device clock stopped advancing; schedule writes blocked'),
-      Math.max(1, remaining),
-    );
+    const now = Date.now();
+    const age = Math.max(now - this.lastReceivedAt, now - this.lastAdvancedAt);
+    if (age >= MINI_SCHEDULE_MAX_AGE) {
+      logger.warn(
+        {
+          deviceId: this.context.device.deviceId,
+          telemetryAgeMs: now - this.lastReceivedAt,
+          clockProgressAgeMs: now - this.lastAdvancedAt,
+          deviceTime: this.runtime?.deviceTime,
+        },
+        'Schedule telemetry watchdog expired',
+      );
+      this.fail('Telemetry or device clock stopped advancing; schedule writes blocked');
+      return;
+    }
+    if (age >= MINI_SCHEDULE_FRESH_AGE) {
+      this.state.status = this.pending
+        ? `Waiting for fresh telemetry (${this.pending.phase}, slot ${this.pending.slot})`
+        : 'Waiting for fresh telemetry';
+      this.emit();
+    }
+    const nextDeadline =
+      age < MINI_SCHEDULE_FRESH_AGE ? MINI_SCHEDULE_FRESH_AGE : MINI_SCHEDULE_MAX_AGE;
+    this.watchdog = setTimeout(() => this.armWatchdog(), Math.max(1, nextDeadline - age));
     this.watchdog.unref();
   }
 
@@ -239,11 +258,33 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
       }
       return;
     }
+    if (this.pending && namespace !== this.pending.namespace) {
+      // The other namespace can carry a duplicate or delayed copy of the same response.
+      return;
+    }
     const values = data.values;
     const completeSlots = Array.from({ length: 6 }, (_, index) => index + 1).every(slot =>
       ['m', 'mp', 'ms', 'st', 'et', 're'].every(key => values[`${key}${slot}`] != null),
     );
     const clock = data.deviceTime && Date.parse(data.deviceTime);
+    if (
+      data.deviceTime?.endsWith('Z') &&
+      typeof clock === 'number' &&
+      Number.isFinite(clock) &&
+      this.lastClock != null &&
+      clock < this.lastClock
+    ) {
+      logger.debug(
+        {
+          deviceId: this.context.device.deviceId,
+          deviceTime: data.deviceTime,
+          lastAcceptedClock: this.lastClock,
+        },
+        'Ignoring older schedule telemetry snapshot',
+      );
+      this.armWatchdog();
+      return;
+    }
     if (
       !completeSlots ||
       !data.deviceTime?.endsWith('Z') ||
@@ -282,17 +323,31 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
     }
 
     const now = Date.now();
-    if (this.pending && namespace !== this.pending.namespace) {
-      // The other namespace can carry a duplicate or delayed copy of the same response.
+    const recovering = this.state.controlsEnabled && !this.healthy();
+    if (clock === this.lastClock) {
+      this.lastReceivedAt = now;
+      logger.debug(
+        { deviceId: this.context.device.deviceId, deviceTime: data.deviceTime },
+        'Ignoring cached schedule telemetry snapshot',
+      );
+      this.armWatchdog();
       return;
     }
     if (
       this.lastClock != null &&
-      (clock < this.lastClock ||
-        clock - this.lastClock > now - this.lastReceivedAt + 5000 ||
-        now - this.lastReceivedAt > MINI_SCHEDULE_MAX_AGE ||
-        now - this.lastAdvancedAt > MINI_SCHEDULE_MAX_AGE)
+      (clock - this.lastClock > now - this.lastAdvancedAt + MINI_SCHEDULE_TELEMETRY_TIMEOUT ||
+        (!this.locked && now - this.lastAdvancedAt >= MINI_SCHEDULE_MAX_AGE))
     ) {
+      logger.warn(
+        {
+          deviceId: this.context.device.deviceId,
+          telemetryAgeMs: now - this.lastReceivedAt,
+          clockProgressAgeMs: now - this.lastAdvancedAt,
+          deviceClockAdvanceMs: clock - this.lastClock,
+          deviceTime: data.deviceTime,
+        },
+        'Schedule telemetry continuity check failed',
+      );
       this.fail('Stale telemetry or discontinuous device clock');
       this.lastClock = undefined;
     }
@@ -312,7 +367,7 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
         if (!this.draftBaseline.has(index)) {
           this.draftBaseline.set(index, fingerprint(periods[index]));
         }
-      } else {
+      } else if (this.pending?.slot !== index + 1) {
         const period = periods[index];
         this.state.drafts[index] = {
           ...period,
@@ -356,7 +411,13 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
           return;
         }
         if (fingerprint(periods[pending.slot - 1]) !== fingerprint(pending.period)) {
-          this.fail(`Schedule slot ${pending.slot} does not match its read-back`);
+          logger.debug(
+            { deviceId: this.context.device.deviceId, slot: pending.slot },
+            'Schedule read-back is not confirmed yet; waiting without retry',
+          );
+          this.state.status = `Waiting for slot ${pending.slot} read-back`;
+          this.armWatchdog();
+          this.emit();
           return;
         }
         clearTimeout(this.timeout);
@@ -382,7 +443,12 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
             ? 'Cooldown'
             : 'Ready'
           : 'Healthy; controls disabled'
-        : 'Waiting for healthy telemetry';
+        : this.state.controlsEnabled
+          ? 'Waiting for fresh telemetry'
+          : 'Waiting for healthy telemetry';
+      if (recovering && this.healthy()) {
+        this.state.lastError = '';
+      }
     }
     this.armWatchdog();
     this.emit();
@@ -420,7 +486,9 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
           this.emit();
         }
       } else if (this.pending || !this.healthy()) {
-        this.warn('Three fresh, advancing runtime samples are required before enabling controls');
+        this.warn(
+          'Three fresh, advancing runtime samples are required before enabling controls. (Wait for 3 minutes)',
+        );
       } else {
         this.locked = false;
         this.state.controlsEnabled = true;
@@ -516,7 +584,9 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
       return;
     }
     if (!this.healthy() || !this.runtime || !this.namespace) {
-      this.fail('Fresh advancing telemetry is required for Apply');
+      this.state.status = 'Waiting for fresh telemetry';
+      this.warn('Fresh advancing telemetry is required for Apply; try again when Ready');
+      this.armWatchdog();
       return;
     }
     if (Date.now() < this.cooldownUntil) {

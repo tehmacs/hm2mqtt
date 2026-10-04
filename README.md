@@ -803,17 +803,26 @@ memory and are lost when hm2mqtt restarts.
 Apply requires Manual mode and three valid runtime readings with advancing
 device time. It requests a fresh reading before writing and sends one complete
 command on the topic namespace of the latest live reading. It waits up to
-90 seconds for each telemetry step (pre-write refresh and read-back), allowing
-for a relay that synchronizes once a minute. The matching acknowledgement has a
-15-second timeout. Other slots must remain
+150 seconds for each telemetry step (pre-write refresh and read-back), allowing
+for a relay that synchronizes once a minute and skips a cycle. Cached or older
+responses cannot confirm a write; differing target values remain unconfirmed
+until a matching newer response arrives or the deadline expires. The matching
+acknowledgement has a 15-second timeout. Other slots must remain
 unchanged. Only one Apply is allowed at a time; additional commands are rejected,
 not queued. After confirmation there is a ten-second cooldown.
 
-Missing, invalid or mismatched readings, a stopped device clock, a failed write,
-or a lost MQTT connection lock schedule writes. Readings and clock progress must
-be newer than the polling interval plus 15 seconds, with a minimum allowance of
-90 seconds. After a lockout, obtain three
-new advancing readings and explicitly re-enable controls. There are no automatic
+Readings and clock progress must be newer than the polling interval plus
+15 seconds, with a minimum allowance of 90 seconds. If readings become overdue,
+*Waiting for fresh telemetry* pauses writes without turning off the opt-in
+switch. A valid advancing reading restores readiness, but does not retry or
+resend a command. Apply pressed while paused is rejected; press it again when
+Ready.
+
+If telemetry or clock progress remains overdue for two polling intervals plus
+30 seconds (at least 150 seconds), controls lock. Invalid readings, device
+faults, command failures, changed other slots or operating mode, and lost MQTT
+connections also lock controls. After a lockout, obtain three new advancing
+readings and explicitly re-enable controls. There are no automatic
 retries, offline command queues, or retained schedule commands. *Schedule Control
 Status* and *Schedule Control Error* explain blocked operations.
 

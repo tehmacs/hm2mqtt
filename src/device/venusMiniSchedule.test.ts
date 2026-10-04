@@ -14,6 +14,7 @@ import { miniRuntimePayload } from '../test/venusMiniSchedule.js';
 import {
   MINI_SCHEDULE_COOLDOWN,
   MINI_SCHEDULE_MAX_AGE,
+  MINI_SCHEDULE_FRESH_AGE,
   MINI_SCHEDULE_ACK_TIMEOUT,
   MINI_SCHEDULE_TELEMETRY_TIMEOUT,
   buildMiniScheduleCommand,
@@ -202,6 +203,7 @@ describe('Venus E Mini guarded schedules', () => {
 
   test('uses the namespace of live runtime telemetry rather than publishing twice', () => {
     healthy();
+    jest.advanceTimersByTime(1000);
     runtime({}, 'marstek_energy');
     command('schedule/controls-enabled', 'true');
     command('schedule/1/apply');
@@ -299,14 +301,50 @@ describe('Venus E Mini guarded schedules', () => {
     expect(state().lastError).toMatch(/rejected/);
   });
 
-  test('read-back mismatch locks writes and preserves the draft', () => {
+  test('read-back mismatch stays unconfirmed until a matching newer snapshot arrives', () => {
     enable();
     start();
     ack();
     advanceRuntime();
-    expect(state().controlsEnabled).toBe(false);
+    expect(state().controlsEnabled).toBe(true);
     expect(state().drafts[0].power).toBe(90);
-    expect(state().lastError).toMatch(/read-back/);
+    expect(state().status).toMatch(/Waiting.*read-back/);
+    expect(state().lastError).toBe('');
+    const count = publish.mock.calls.length;
+    periods[0] = configured({ power: 90 });
+    advanceRuntime();
+    expect(state().status).toMatch(/verified/);
+    expect(publish.mock.calls.length).toBe(count);
+    expect(writes()).toHaveLength(1);
+  });
+
+  test('a mismatched read-back does not extend its deadline or cause a retry', () => {
+    enable();
+    start();
+    ack();
+    const count = publish.mock.calls.length;
+    const startedAt = Date.now();
+    while (Date.now() - startedAt < MINI_SCHEDULE_TELEMETRY_TIMEOUT - 1000) {
+      advanceRuntime();
+    }
+    expect(state().controlsEnabled).toBe(true);
+    expect(state().drafts[0].power).toBe(90);
+    jest.advanceTimersByTime(1000);
+    expect(state().controlsEnabled).toBe(false);
+    expect(state().lastError).toMatch(/read-back timed out/);
+    expect(publish.mock.calls.length).toBe(count);
+  });
+
+  test('unconfirmed read-back preserves an unedited draft until its deadline', () => {
+    enable();
+    command('schedule/1/apply');
+    advanceRuntime();
+    ack();
+    periods[0] = configured({ power: 80 });
+    advanceRuntime();
+    expect(state().controlsEnabled).toBe(true);
+    expect(state().drafts[0].power).toBe(100);
+    expect(state().status).toMatch(/Waiting.*read-back/);
   });
 
   test('verification requires an advancing device clock', () => {
@@ -385,10 +423,107 @@ describe('Venus E Mini guarded schedules', () => {
     expect(state().status).toMatch(/Locked/);
   });
 
+  test('cached packets do not make the next normal clock advance look like a clock jump', () => {
+    enable();
+    for (let cycle = 0; cycle < 3; cycle++) {
+      const cached = miniRuntimePayload(periods);
+      jest.advanceTimersByTime(55000);
+      controls.handleDeviceMessage(device, 'hame_energy/VNSEMINI-0/device/mini-a/ctrl', cached);
+      jest.advanceTimersByTime(5000);
+      runtime();
+      expect(state().controlsEnabled).toBe(true);
+      expect(state().lastError).toBe('');
+    }
+  });
+
+  test('a delayed device clock can catch up within the bounded relay allowance', () => {
+    for (let sample = 0; sample < 3; sample++) {
+      jest.advanceTimersByTime(1000);
+      const delayed = miniRuntimePayload(periods, new Date(Date.now() - 60000));
+      controls.handleDeviceMessage(device, 'hame_energy/VNSEMINI-0/device/mini-a/ctrl', delayed);
+    }
+    command('schedule/controls-enabled', 'true');
+    expect(state().controlsEnabled).toBe(true);
+    jest.advanceTimersByTime(60000);
+    runtime();
+    expect(state().controlsEnabled).toBe(true);
+    expect(state().status).toBe('Ready');
+  });
+
   test('missing telemetry locks writes without needing another incoming message', () => {
     enable();
     jest.advanceTimersByTime(MINI_SCHEDULE_MAX_AGE);
     expect(state().controlsEnabled).toBe(false);
+  });
+
+  test('temporary staleness pauses writes without clearing opt-in or resending commands', () => {
+    enable();
+    jest.advanceTimersByTime(MINI_SCHEDULE_FRESH_AGE);
+    expect(state().controlsEnabled).toBe(true);
+    expect(state().status).toBe('Waiting for fresh telemetry');
+    command('schedule/1/apply');
+    expect(publish).not.toHaveBeenCalled();
+    expect(state().controlsEnabled).toBe(true);
+    jest.advanceTimersByTime(30000);
+    runtime();
+    expect(state().status).toBe('Ready');
+    expect(state().controlsEnabled).toBe(true);
+    expect(publish).not.toHaveBeenCalled();
+  });
+
+  test('preflight tolerates one skipped synchronization without writing from a cached response', () => {
+    enable();
+    const cached = miniRuntimePayload(periods);
+    command('schedule/1/apply');
+    jest.advanceTimersByTime(60000);
+    controls.handleDeviceMessage(device, 'hame_energy/VNSEMINI-0/device/mini-a/ctrl', cached);
+    expect(writes()).toHaveLength(0);
+    jest.advanceTimersByTime(60000);
+    expect(state().controlsEnabled).toBe(true);
+    runtime();
+    expect(writes()).toHaveLength(1);
+  });
+
+  test('an older snapshot cannot roll back schedule decisions or abort a pending write', () => {
+    enable();
+    const old = miniRuntimePayload([configured({ power: 50 })], new Date(Date.now() - 60000));
+    start();
+    controls.handleDeviceMessage(device, 'hame_energy/VNSEMINI-0/device/mini-a/ctrl', old);
+    expect(state().controlsEnabled).toBe(true);
+    expect(state().drafts[0].power).toBe(90);
+    expect(state().status).toMatch(/acknowledgement/);
+    ack();
+    periods[0] = configured({ power: 90 });
+    advanceRuntime();
+    expect(state().status).toMatch(/verified/);
+    expect(writes()).toHaveLength(1);
+  });
+
+  test('cached and older packets cannot satisfy the startup sample requirement', () => {
+    runtime();
+    const cached = miniRuntimePayload(periods);
+    const old = miniRuntimePayload(periods, new Date(Date.now() - 60000));
+    for (let sample = 0; sample < 3; sample++) {
+      controls.handleDeviceMessage(device, 'hame_energy/VNSEMINI-0/device/mini-a/ctrl', cached);
+      controls.handleDeviceMessage(device, 'hame_energy/VNSEMINI-0/device/mini-a/ctrl', old);
+    }
+    command('schedule/controls-enabled', 'true');
+    expect(state().controlsEnabled).toBe(false);
+    advanceRuntime();
+    advanceRuntime();
+    command('schedule/controls-enabled', 'true');
+    expect(state().controlsEnabled).toBe(true);
+  });
+
+  test('fresh telemetry after a prolonged gap does not automatically unlock controls', () => {
+    enable();
+    jest.advanceTimersByTime(MINI_SCHEDULE_MAX_AGE);
+    healthy();
+    expect(state().controlsEnabled).toBe(false);
+    command('schedule/1/apply');
+    expect(writes()).toHaveLength(0);
+    command('schedule/controls-enabled', 'true');
+    expect(state().controlsEnabled).toBe(true);
   });
 
   test.each([
@@ -410,9 +545,10 @@ describe('Venus E Mini guarded schedules', () => {
     expect(state().lastError).toMatch(/invalid/);
   });
 
-  test('backward or implausibly advancing device clock locks writes', () => {
+  test('implausibly advancing device clock locks writes', () => {
     enable();
-    advanceRuntime({ time: '2026-10-4 12:00:00' });
+    const future = miniRuntimePayload(periods, new Date(Date.now() + 3600000));
+    controls.handleDeviceMessage(device, 'hame_energy/VNSEMINI-0/device/mini-a/ctrl', future);
     expect(state().controlsEnabled).toBe(false);
   });
 
