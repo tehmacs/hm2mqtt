@@ -2,8 +2,9 @@ import { jest } from '@jest/globals';
 import './device/registry.js';
 import { ControlHandler } from './controlHandler.js';
 import { DeviceManager, DeviceStateData } from './deviceManager.js';
-import { MqttConfig, Device } from './types.js';
+import { MqttConfig, Device, VenusMiniDeviceData, VenusMiniScheduleData } from './types.js';
 import { DEFAULT_TOPIC_PREFIX } from './constants.js';
+import { miniRuntimePayload } from './test/venusMiniSchedule.js';
 
 /**
  * Device command test case definition
@@ -2054,15 +2055,15 @@ const commandTestCases: CommandTestCase[] = [
           enabled: false,
           power: 0,
           direction: 'selfConsumption',
-          startTime: '00:00',
-          endTime: '00:00',
-          repeatRaw: 0,
+          startTime: '05:00',
+          endTime: '06:00',
+          repeatRaw: 127,
         },
       ],
     },
     command: 'schedule/6/power',
     input: '432',
-    expectedOutput: 'cd=52,m6=0,mp6=432,ms6=3,st6=00:00,et6=00:00,re6=0',
+    expectedOutput: 'cd=52,m6=0,mp6=432,ms6=3,st6=05:00,et6=06:00,re6=127',
   },
   {
     description: 'Venus E Mini schedule accepts a disabled configured preceding slot',
@@ -2385,6 +2386,16 @@ describe('Device Commands', () => {
   let controlHandler: ControlHandler;
   let deviceState: DeviceStateData;
 
+  beforeEach(() => {
+    jest.useFakeTimers();
+    jest.setSystemTime(new Date('2026-10-04T10:00:00Z'));
+  });
+
+  afterEach(() => {
+    controlHandler?.disconnect();
+    jest.useRealTimers();
+  });
+
   function setupTest(
     deviceType: string,
     initialState?: Partial<DeviceStateData>,
@@ -2449,7 +2460,32 @@ describe('Device Commands', () => {
       test(`input: "${input}" -> output: ${expectedOutput === null ? 'null' : `"${expectedOutput}"`}`, () => {
         const device = setupTest(deviceType, initialState, useFlashCommands ?? true);
 
+        const isMiniSchedule = deviceType === 'VNSEMINI-0' && command.startsWith('schedule/');
+        const periods =
+          (initialState as Partial<VenusMiniDeviceData> | undefined)?.timePeriods ?? [];
+        const responseTopic = `hame_energy/${device.deviceType}/device/${device.deviceId}/ctrl`;
+        if (isMiniSchedule) {
+          for (let sample = 0; sample < 3; sample++) {
+            jest.advanceTimersByTime(1000);
+            controlHandler.handleDeviceMessage(device, responseTopic, miniRuntimePayload(periods));
+          }
+          handleControlTopic(device, 'schedule/controls-enabled', 'true');
+        }
         handleControlTopic(device, command, input);
+
+        if (isMiniSchedule) {
+          expect(publishCallback).not.toHaveBeenCalled();
+          const state = deviceManager.getDeviceState(device) as VenusMiniScheduleData;
+          if (!state.lastError) {
+            const slot = command.split('/')[1];
+            handleControlTopic(device, `schedule/${slot}/apply`, 'PRESS');
+            jest.advanceTimersByTime(1000);
+            controlHandler.handleDeviceMessage(device, responseTopic, miniRuntimePayload(periods));
+          }
+          const writes = publishCallback.mock.calls.filter(([, payload]) => payload !== 'cd=01');
+          expect(writes).toEqual(expectedOutput == null ? [] : [[device, expectedOutput]]);
+          return;
+        }
 
         if (expectedOutput === null) {
           expect(publishCallback).not.toHaveBeenCalled();

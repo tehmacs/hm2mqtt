@@ -19,7 +19,8 @@ export class MqttClient {
   constructor(
     private config: MqttConfig,
     private deviceManager: DeviceManager,
-    private messageHandler: (topic: string, message: Buffer) => void,
+    private messageHandler: (topic: string, message: Buffer, packet?: mqtt.IPublishPacket) => void,
+    private disconnectHandler: () => void = () => {},
   ) {
     this.client = this.setupClient();
     this.allowedConsecutiveTimeouts = config.allowedConsecutiveTimeouts ?? 3;
@@ -57,10 +58,16 @@ export class MqttClient {
 
     client.on('connect', this.handleConnect.bind(this));
     client.on('reconnect', () => logger.debug('Attempting to reconnect to MQTT broker...'));
-    client.on('offline', () => logger.warn('MQTT client is offline'));
+    client.on('offline', () => {
+      logger.warn('MQTT client is offline');
+      this.disconnectHandler();
+    });
     client.on('message', this.messageHandler);
     client.on('error', this.handleError.bind(this));
-    client.on('close', this.handleClose.bind(this));
+    client.on('close', () => {
+      this.disconnectHandler();
+      this.handleClose();
+    });
 
     return client;
   }
@@ -193,6 +200,16 @@ export class MqttClient {
         resolve();
       });
     });
+  }
+
+  publishOnce(topic: string, message: string): Promise<void> {
+    if (!this.client.connected) {
+      const error = new Error('MQTT is disconnected; command will not be queued');
+      logger.error(`Cannot publish guarded command to ${topic}:`, error);
+      return Promise.reject(error);
+    }
+    // QoS 0 avoids automatic retransmission of a potentially non-idempotent device command.
+    return this.publish(topic, message, { qos: 0, retain: false });
   }
 
   /**

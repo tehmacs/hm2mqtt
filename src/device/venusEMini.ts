@@ -3,11 +3,9 @@ import {
   globalPollInterval,
   registerDeviceDefinition,
 } from '../deviceDefinition.js';
-import type { ControlHandlerParams } from '../controlHandler.js';
 import {
   VenusMiniDeviceData,
   VenusMiniScheduleDirection,
-  VenusMiniTimePeriod,
   VenusMiniWorkingMode,
   WeekdaySet,
   isValidMeterType,
@@ -28,6 +26,12 @@ import {
 } from '../homeAssistantDiscovery.js';
 import logger from '../logger.js';
 import { divide, equalsBoolean, identity, map, negateIfPositive, number } from '../transforms.js';
+import {
+  MINI_SCHEDULE_POWER_MAX,
+  VenusMiniScheduleSession,
+  miniRepeatMaskToWeekdaySet,
+} from './venusMiniSchedule.js';
+import type { VenusMiniScheduleData } from '../types.js';
 
 /**
  * Marstek Venus E Mini, device type `VNSEMINI-X` (e.g. `VNSEMINI-0`).
@@ -95,128 +99,6 @@ import { divide, equalsBoolean, identity, map, negateIfPositive, number } from '
 // The app's own setting screen enforces this range.
 const MINI_DOD_MIN = 30;
 const MINI_DOD_MAX = 90;
-const MINI_SCHEDULE_POWER_MIN = 0;
-const MINI_SCHEDULE_POWER_MAX = 1500;
-
-const venusMiniScheduleDirectionCodes: Record<
-  Exclude<VenusMiniScheduleDirection, 'unknown'>,
-  number
-> = {
-  charge: 1,
-  discharge: 2,
-  selfConsumption: 3,
-};
-
-function miniRepeatMaskToWeekdaySet(mask: number): WeekdaySet {
-  return '0123456'
-    .split('')
-    .filter((_, index) => mask & (1 << index))
-    .join('') as WeekdaySet;
-}
-
-function miniWeekdaySetToRepeatMask(weekday: WeekdaySet): number {
-  return weekday.split('').reduce((mask, day) => mask | (1 << parseInt(day, 10)), 0);
-}
-
-function formatMiniScheduleTime(time: string): string | null {
-  const match = /^([0-1]?\d|2[0-3]):([0-5]\d)$/.exec(time);
-  if (!match) {
-    return null;
-  }
-  return `${match[1].padStart(2, '0')}:${match[2]}`;
-}
-
-function miniScheduleTimeToMinutes(time: string | undefined): number | null {
-  const formatted = time && formatMiniScheduleTime(time);
-  if (!formatted) {
-    return null;
-  }
-  const [hour, minute] = formatted.split(':').map(Number);
-  return hour * 60 + minute;
-}
-
-function miniSchedulesOverlap(first: VenusMiniTimePeriod, second: VenusMiniTimePeriod): boolean {
-  if (first.repeatRaw == null || second.repeatRaw == null) {
-    return false;
-  }
-
-  const firstStart = miniScheduleTimeToMinutes(first.startTime);
-  const firstEnd = miniScheduleTimeToMinutes(first.endTime);
-  const secondStart = miniScheduleTimeToMinutes(second.startTime);
-  const secondEnd = miniScheduleTimeToMinutes(second.endTime);
-  if (
-    firstStart == null ||
-    firstEnd == null ||
-    secondStart == null ||
-    secondEnd == null ||
-    firstStart === firstEnd ||
-    secondStart === secondEnd
-  ) {
-    return false;
-  }
-
-  const minutesPerDay = 24 * 60;
-  const minutesPerWeek = 7 * minutesPerDay;
-  const intervals = (
-    repeatRaw: number,
-    start: number,
-    end: number,
-  ): Array<readonly [number, number]> =>
-    Array.from({ length: 7 }, (_, day) => day)
-      .filter(day => repeatRaw & (1 << day))
-      .map(day => {
-        const dayStart = day * minutesPerDay;
-        return [dayStart + start, dayStart + end + (end < start ? minutesPerDay : 0)] as const;
-      });
-
-  const firstIntervals = intervals(first.repeatRaw, firstStart, firstEnd);
-  const secondIntervals = intervals(second.repeatRaw, secondStart, secondEnd);
-  return firstIntervals.some(([firstFrom, firstTo]) =>
-    secondIntervals.some(([secondFrom, secondTo]) =>
-      [-minutesPerWeek, 0, minutesPerWeek].some(shift => {
-        const shiftedFrom = secondFrom + shift;
-        const shiftedTo = secondTo + shift;
-        return firstFrom < shiftedTo && shiftedFrom < firstTo;
-      }),
-    ),
-  );
-}
-
-function buildMiniScheduleCommand(slot: number, period: VenusMiniTimePeriod): string | null {
-  const startTime = period.startTime && formatMiniScheduleTime(period.startTime);
-  const endTime = period.endTime && formatMiniScheduleTime(period.endTime);
-  const direction =
-    period.direction && period.direction !== 'unknown'
-      ? venusMiniScheduleDirectionCodes[period.direction]
-      : undefined;
-
-  if (
-    period.enabled == null ||
-    period.power == null ||
-    !Number.isInteger(period.power) ||
-    period.power < MINI_SCHEDULE_POWER_MIN ||
-    period.power > MINI_SCHEDULE_POWER_MAX ||
-    direction == null ||
-    startTime == null ||
-    endTime == null ||
-    period.repeatRaw == null ||
-    !Number.isInteger(period.repeatRaw) ||
-    period.repeatRaw < 0 ||
-    period.repeatRaw > 127
-  ) {
-    return null;
-  }
-
-  return [
-    `cd=${46 + slot}`,
-    `m${slot}=${period.enabled ? 1 : 0}`,
-    `mp${slot}=${period.power}`,
-    `ms${slot}=${direction}`,
-    `st${slot}=${startTime}`,
-    `et${slot}=${endTime}`,
-    `re${slot}=${period.repeatRaw}`,
-  ].join(',');
-}
 
 const requiredMiniRuntimeInfoKeys = ['gp', 'lp', 'soc', 'be', 'pmu', 'wif_s', 'mq_s', 'm1', 'time'];
 function isVenusMiniRuntimeInfoMessage(values: Record<string, string>): boolean {
@@ -847,8 +729,7 @@ function registerVenusMiniRuntimeInfoMessage(message: BuildMessageFn) {
     // Six charge/discharge schedule slots - the same concept as the other
     // Venus variants' tim_0..tim_9 periods, but with a flatter per-slot
     // encoding (m{n}/mp{n}/ms{n}/st{n}/et{n}/re{n} instead of one
-    // pipe-separated field). The mode and repeat values are captured but
-    // their meaning is unconfirmed (see VENUS_MINI_NOTES.md).
+    // pipe-separated field). Draft controls are published separately.
     for (let i = 1; i <= 6; i++) {
       const idx = i - 1;
 
@@ -859,50 +740,41 @@ function registerVenusMiniRuntimeInfoMessage(message: BuildMessageFn) {
       });
       advertise(
         ['timePeriods', idx, 'enabled'],
-        switchComponent({
+        binarySensorComponent({
           id: `schedule_${i}_enabled`,
           name: `Schedule Slot ${i} Enabled`,
           icon: 'mdi:clock-time-four-outline',
-          command: `schedule/${i}/enabled`,
         }),
       );
 
       field({ key: `mp${i}`, path: ['timePeriods', idx, 'power'], transform: number() });
       advertise(
         ['timePeriods', idx, 'power'],
-        numberComponent({
+        sensorComponent<number>({
           id: `schedule_${i}_power`,
           name: `Schedule Slot ${i} Power`,
-          command: `schedule/${i}/power`,
           device_class: 'power',
           unit_of_measurement: 'W',
-          min: MINI_SCHEDULE_POWER_MIN,
-          max: MINI_SCHEDULE_POWER_MAX,
-          step: 1,
         }),
       );
 
       field({ key: `st${i}`, path: ['timePeriods', idx, 'startTime'], transform: identity() });
       advertise(
         ['timePeriods', idx, 'startTime'],
-        textComponent({
+        sensorComponent<string>({
           id: `schedule_${i}_start_time`,
           name: `Schedule Slot ${i} Start Time`,
           icon: 'mdi:clock-time-four-outline',
-          command: `schedule/${i}/start-time`,
-          pattern: '^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$',
         }),
       );
 
       field({ key: `et${i}`, path: ['timePeriods', idx, 'endTime'], transform: identity() });
       advertise(
         ['timePeriods', idx, 'endTime'],
-        textComponent({
+        sensorComponent<string>({
           id: `schedule_${i}_end_time`,
           name: `Schedule Slot ${i} End Time`,
           icon: 'mdi:clock-time-four-outline',
-          command: `schedule/${i}/end-time`,
-          pattern: '^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$',
         }),
       );
 
@@ -924,11 +796,10 @@ function registerVenusMiniRuntimeInfoMessage(message: BuildMessageFn) {
       });
       advertise(
         ['timePeriods', idx, 'direction'],
-        selectComponent<VenusMiniScheduleDirection>({
+        sensorComponent<VenusMiniScheduleDirection>({
           id: `schedule_${i}_direction`,
           name: `Schedule Slot ${i} Direction`,
           icon: 'mdi:swap-vertical',
-          command: `schedule/${i}/direction`,
           valueMappings: {
             charge: 'Charge',
             discharge: 'Discharge',
@@ -958,135 +829,44 @@ function registerVenusMiniRuntimeInfoMessage(message: BuildMessageFn) {
       });
       advertise(
         ['timePeriods', idx, 'weekday'],
-        textComponent<WeekdaySet>({
+        sensorComponent<WeekdaySet>({
           id: `schedule_${i}_weekday`,
           name: `Schedule Slot ${i} Weekday`,
           icon: 'mdi:calendar-week',
-          command: `schedule/${i}/weekday`,
-          pattern: '^0?1?2?3?4?5?6?$',
         }),
       );
-
-      const updateSchedule = (
-        updateDeviceState: ControlHandlerParams<VenusMiniDeviceData>['updateDeviceState'],
-        publishCallback: ControlHandlerParams<VenusMiniDeviceData>['publishCallback'],
-        update: Partial<VenusMiniTimePeriod>,
-      ) => {
-        updateDeviceState(state => {
-          const missingPreviousSlot = state.timePeriods
-            ?.slice(0, idx)
-            .findIndex((period, periodIndex) => !buildMiniScheduleCommand(periodIndex + 1, period));
-          if (missingPreviousSlot != null && missingPreviousSlot >= 0) {
-            logger.warn(
-              `Schedule slot ${i} cannot be configured before slot ${missingPreviousSlot + 1}`,
-            );
-            return;
-          }
-
-          const current = state.timePeriods?.[idx];
-          if (!current) {
-            logger.warn(`Schedule slot ${i} not found in device state`);
-            return;
-          }
-
-          const period = { ...current, ...update };
-          const payload = buildMiniScheduleCommand(i, period);
-          if (!payload) {
-            logger.warn(`Schedule slot ${i} has incomplete or invalid state`);
-            return;
-          }
-
-          const overlappingSlot = state.timePeriods.findIndex(
-            (otherPeriod, otherIndex) =>
-              otherIndex !== idx &&
-              buildMiniScheduleCommand(otherIndex + 1, otherPeriod) != null &&
-              miniSchedulesOverlap(period, otherPeriod),
-          );
-          if (overlappingSlot >= 0) {
-            logger.warn(`Schedule slot ${i} overlaps with slot ${overlappingSlot + 1}`);
-            return;
-          }
-
-          const timePeriods = [...state.timePeriods];
-          timePeriods[idx] = period;
-          publishCallback(payload);
-          return { timePeriods };
-        });
-      };
-
-      command(`schedule/${i}/enabled`, {
-        handler: ({ message, publishCallback, updateDeviceState }) => {
-          if (!['true', 'false', 'on', 'off', '1', '0'].includes(message.toLowerCase())) {
-            logger.warn('Invalid schedule enabled value:', message);
-            return;
-          }
-          const enabled = ['true', 'on', '1'].includes(message.toLowerCase());
-          updateSchedule(updateDeviceState, publishCallback, { enabled });
-        },
-      });
-
-      command(`schedule/${i}/power`, {
-        handler: ({ message, publishCallback, updateDeviceState }) => {
-          const power = Number(message);
-          if (
-            !Number.isInteger(power) ||
-            power < MINI_SCHEDULE_POWER_MIN ||
-            power > MINI_SCHEDULE_POWER_MAX
-          ) {
-            logger.warn('Invalid schedule power value:', message);
-            return;
-          }
-          updateSchedule(updateDeviceState, publishCallback, { power });
-        },
-      });
-
-      command(`schedule/${i}/direction`, {
-        handler: ({ message, publishCallback, updateDeviceState }) => {
-          if (!Object.prototype.hasOwnProperty.call(venusMiniScheduleDirectionCodes, message)) {
-            logger.warn('Invalid schedule direction value:', message);
-            return;
-          }
-          updateSchedule(updateDeviceState, publishCallback, {
-            direction: message as Exclude<VenusMiniScheduleDirection, 'unknown'>,
-          });
-        },
-      });
-
-      command(`schedule/${i}/start-time`, {
-        handler: ({ message, publishCallback, updateDeviceState }) => {
-          const startTime = formatMiniScheduleTime(message);
-          if (!startTime) {
-            logger.warn('Invalid schedule start time:', message);
-            return;
-          }
-          updateSchedule(updateDeviceState, publishCallback, { startTime });
-        },
-      });
-
-      command(`schedule/${i}/end-time`, {
-        handler: ({ message, publishCallback, updateDeviceState }) => {
-          const endTime = formatMiniScheduleTime(message);
-          if (!endTime) {
-            logger.warn('Invalid schedule end time:', message);
-            return;
-          }
-          updateSchedule(updateDeviceState, publishCallback, { endTime });
-        },
-      });
-
-      command(`schedule/${i}/weekday`, {
-        handler: ({ message, publishCallback, updateDeviceState }) => {
-          if (!/^0?1?2?3?4?5?6?$/.test(message)) {
-            logger.warn('Invalid schedule weekday value:', message);
-            return;
-          }
-          const weekday = message as WeekdaySet;
-          updateSchedule(updateDeviceState, publishCallback, {
-            weekday,
-            repeatRaw: miniWeekdaySetToRepeatMask(weekday),
-          });
-        },
-      });
+      // Remove retained discovery for the former immediate-write entities.
+      advertise(
+        ['timePeriods', idx, 'enabled'],
+        switchComponent({ id: `schedule_${i}_enabled`, name: '', command: '' }),
+        { enabled: () => false },
+      );
+      advertise(
+        ['timePeriods', idx, 'power'],
+        numberComponent({ id: `schedule_${i}_power`, name: '', command: '' }),
+        { enabled: () => false },
+      );
+      for (const [key, suffix] of [
+        ['startTime', 'start_time'],
+        ['endTime', 'end_time'],
+        ['weekday', 'weekday'],
+      ] as const) {
+        advertise(
+          ['timePeriods', idx, key],
+          textComponent({ id: `schedule_${i}_${suffix}`, name: '', command: '' }),
+          { enabled: () => false },
+        );
+      }
+      advertise(
+        ['timePeriods', idx, 'direction'],
+        selectComponent<VenusMiniScheduleDirection>({
+          id: `schedule_${i}_direction`,
+          name: '',
+          command: '',
+          valueMappings: { charge: '', discharge: '', selfConsumption: '', unknown: '' },
+        }),
+        { enabled: () => false },
+      );
     }
 
     for (const raw of venusMiniNamedRawFields) {
@@ -1344,6 +1124,113 @@ function registerVenusMiniRuntimeInfoMessage(message: BuildMessageFn) {
  * external meter is configured, so it answers no power request at all. The
  * entities only appear once a device actually reports the keys.
  */
+function registerVenusMiniScheduleMessage(message: BuildMessageFn) {
+  message<VenusMiniScheduleData>(
+    {
+      refreshDataPayload: '',
+      isMessage: () => false,
+      publishPath: 'schedule',
+      defaultState: {
+        drafts: [],
+        controlsEnabled: false,
+        status: 'Controls disabled',
+        lastError: '',
+      },
+      getAdditionalDeviceInfo: () => ({}),
+      pollInterval: globalPollInterval,
+      controlsDeviceAvailability: false,
+      polled: false,
+    },
+    ({ advertise }) => {
+      advertise(
+        ['controlsEnabled'],
+        switchComponent({
+          id: 'schedule_controls_enabled',
+          name: 'Experimental Schedule Controls',
+          command: 'schedule/controls-enabled',
+          enabled_by_default: false,
+        }),
+      );
+      advertise(
+        ['status'],
+        sensorComponent<string>({ id: 'schedule_status', name: 'Schedule Control Status' }),
+      );
+      advertise(
+        ['lastError'],
+        sensorComponent<string>({ id: 'schedule_error', name: 'Schedule Control Error' }),
+      );
+      for (let slot = 1; slot <= 6; slot++) {
+        const index = slot - 1;
+        const base = { name: `Schedule Slot ${slot} Draft`, enabled_by_default: false };
+        advertise(
+          ['drafts', index, 'enabled'],
+          switchComponent({
+            ...base,
+            id: `schedule_${slot}_draft_enabled`,
+            name: `${base.name} Enabled`,
+            command: `schedule/${slot}/enabled`,
+          }),
+        );
+        advertise(
+          ['drafts', index, 'power'],
+          numberComponent({
+            ...base,
+            id: `schedule_${slot}_draft_power`,
+            name: `${base.name} Power`,
+            command: `schedule/${slot}/power`,
+            unit_of_measurement: 'W',
+            min: 0,
+            max: MINI_SCHEDULE_POWER_MAX,
+            step: 1,
+          }),
+        );
+        advertise(
+          ['drafts', index, 'direction'],
+          selectComponent({
+            ...base,
+            id: `schedule_${slot}_draft_direction`,
+            name: `${base.name} Direction`,
+            command: `schedule/${slot}/direction`,
+            valueMappings: {
+              charge: 'Charge',
+              discharge: 'Discharge',
+              selfConsumption: 'Self Consumption',
+            },
+          }),
+        );
+        for (const [key, suffix, command] of [
+          ['startTime', 'start_time', 'start-time'],
+          ['endTime', 'end_time', 'end-time'],
+          ['weekday', 'weekday', 'weekday'],
+        ] as const) {
+          advertise(
+            ['drafts', index, key],
+            textComponent({
+              ...base,
+              id: `schedule_${slot}_draft_${suffix}`,
+              name: `${base.name} ${key === 'weekday' ? 'Weekdays' : key === 'startTime' ? 'Start Time' : 'End Time'}`,
+              command: `schedule/${slot}/${command}`,
+              pattern: key === 'weekday' ? '^0?1?2?3?4?5?6?$' : '^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$',
+            }),
+          );
+        }
+        for (const action of ['apply', 'reset'] as const) {
+          advertise(
+            [],
+            buttonComponent({
+              id: `schedule_${slot}_${action}`,
+              name: `Schedule Slot ${slot} ${action === 'apply' ? 'Apply' : 'Reset Draft'}`,
+              command: `schedule/${slot}/${action}`,
+              payload_press: 'PRESS',
+              enabled_by_default: false,
+            }),
+          );
+        }
+      }
+    },
+  );
+}
+
 function registerVenusMiniCtPowerMessage(message: BuildMessageFn) {
   const options = {
     refreshDataPayload: 'cd=59',
@@ -1404,9 +1291,11 @@ registerDeviceDefinition(
   {
     deviceTypes: ['VNSEMINI'],
     beta: true,
+    createControlSession: context => new VenusMiniScheduleSession(context),
   },
   ({ message }) => {
     registerVenusMiniRuntimeInfoMessage(message);
     registerVenusMiniCtPowerMessage(message);
+    registerVenusMiniScheduleMessage(message);
   },
 );

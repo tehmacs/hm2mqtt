@@ -137,8 +137,9 @@ either — always read the model's own table.
 | Configure WiFi | *(Bluetooth only)* | `CMD_SET_WIFI` |
 
 The Mini has no `cd=19`, which is why hm2mqtt polls it for power with `cd=59`.
-Its schedule slots must be configured consecutively; out-of-sequence writes can
-make the device stop responding.
+Its schedule slots are configured consecutively as a precaution. Out-of-sequence
+writes were suspected of causing a hang on earlier firmware; causation and the
+exact firmware failure conditions remain unconfirmed.
 
 ### Venus E Mini schedule slot behavior
 
@@ -158,15 +159,38 @@ This means MQTT telemetry cannot tell whether the app will show a disabled slot.
 The app keeps additional state that is not present in the device response.
 Home Assistant should continue to show the values reported by the battery.
 
-Schedule creation must be atomic: collect a complete draft, then send all slot
-fields in one command when the user selects *Apply*. hm2mqtt must not
+Schedule edits are staged independently from telemetry, then all slot fields are
+sent in one command when the user selects *Apply*. hm2mqtt must not
 automatically enable and then disable a schedule to make it visible in the app.
 That two-command workaround could briefly start charging or discharging when
 the configured time range includes the current time.
 
 The app also rejects schedules whose time ranges overlap on a selected weekday.
 hm2mqtt applies the same guard to all complete slots, including disabled slots.
-Intervals that meet at one boundary do not overlap.
+Intervals that meet at one boundary do not overlap. Only same-day intervals are
+accepted; an overnight schedule needs two slots.
+
+Schedule writes require an explicit, non-persistent opt-in and three complete
+runtime readings with advancing device time. Apply refreshes before writing,
+uses only the latest live namespace, waits for `cdNN=ok`, then requests another
+runtime response. Confirmation requires an advancing device clock, exact target
+slot read-back, unchanged other slots, and Manual mode. Pending writes block
+additional Apply requests and other normal device writes. No commands are queued.
+
+Each transaction step times out after 15 seconds. Confirmed writes have a
+ten-second cooldown. Runtime receipt and device-clock progress must remain
+within the polling interval plus 15 seconds. Failures and disconnects disable
+writes; recovery needs three new healthy readings and explicit re-enablement.
+Retained control and response messages cannot authorize a transaction. Guarded
+publishes use QoS 0, are not retained, and are rejected while the broker is
+disconnected to avoid queued or retransmitted device writes.
+
+These checks do not establish firmware safety. Acknowledgements contain no
+transaction identifier, so a delayed acknowledgement for the same slot cannot
+be distinguished from the current one. Post-write telemetry reduces that risk
+but cannot prove actual power-control behavior or exclude concurrent app writes.
+The new workflow needs hardware validation, with charging tests limited to
+100 W or less.
 
 ## A `cd=60` ambiguity worth knowing about
 
@@ -222,8 +246,8 @@ doubt; the exception is the grid-connection power limit, which has no device
 command to implement (see below):
 `cd=60,ser=`, `cd=63,ct_chg_type=` and `cd=54,am=,aw=,ap=` have no documented
 value set; `cd=3` and `cd=4` are reads whose reply shape is unknown; `cd=33`
-has known parameters but an undetermined local-vs-UTC convention (see below);
-and manual-mode scheduling is assembled per call. Venus X and Venus G have no
+has known parameters but an undetermined local-vs-UTC convention (see below).
+Venus X and Venus G have no
 device definitions at all.
 
 ### `cd=33` and the local-vs-UTC question

@@ -662,6 +662,13 @@ export interface VenusMiniTimePeriod {
   repeatRaw?: number; // re{n}, raw weekday bitmask
 }
 
+export interface VenusMiniScheduleData extends BaseDeviceData {
+  drafts: VenusMiniTimePeriod[];
+  controlsEnabled: boolean;
+  status: string;
+  lastError: string;
+}
+
 // Working mode of a Venus E Mini, reported in cm and set with cd=2. Only 0
 // (self-consumption, named `automatic` to match the same mode on the other
 // Venus models) and 2 (manual) have been observed; the "AI optimization" mode

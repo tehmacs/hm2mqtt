@@ -10,6 +10,7 @@ const mockClient = {
   publish: mockPublish,
   subscribe: mockSubscribe,
   end: mockEnd,
+  connected: true,
 };
 
 jest.unstable_mockModule('mqtt', () => ({
@@ -38,7 +39,60 @@ jest.unstable_mockModule('./deviceDefinition.js', () => ({
 
 const { MqttClient } = await import('./mqttClient.js');
 import type { Device } from './types.js';
+import type { MqttConfig } from './types.js';
+import type { DeviceManager } from './deviceManager.js';
 import logger from './logger.js';
+
+describe('MqttClient guarded delivery', () => {
+  const config: MqttConfig = {
+    brokerUrl: 'mqtt://localhost',
+    clientId: 'test',
+    topicPrefix: 'hm2mqtt',
+    autodiscoveryTopicPrefix: 'homeassistant',
+    devices: [],
+    responseTimeout: 15000,
+  };
+
+  test('guarded commands are non-retained QoS 0 and are rejected offline without queuing', async () => {
+    mockPublish.mockClear();
+    mockPublish.mockImplementation((...args: unknown[]) => {
+      const callback = args[3];
+      if (typeof callback === 'function') {
+        callback(null);
+      }
+    });
+    const client = new MqttClient(config, {} as DeviceManager, jest.fn());
+    await client.publishOnce('device/ctrl', 'cd=47');
+    expect(mockPublish).toHaveBeenCalledWith(
+      'device/ctrl',
+      'cd=47',
+      { qos: 0, retain: false },
+      expect.any(Function),
+    );
+    mockPublish.mockClear();
+    mockClient.connected = false;
+    try {
+      await expect(client.publishOnce('device/ctrl', 'cd=47')).rejects.toThrow(/not be queued/);
+      expect(mockPublish).not.toHaveBeenCalled();
+    } finally {
+      mockClient.connected = true;
+    }
+  });
+
+  test('offline and close events notify control sessions', () => {
+    mockOn.mockClear();
+    const disconnect = jest.fn();
+    new MqttClient(config, {} as DeviceManager, jest.fn(), disconnect);
+    for (const event of ['offline', 'close']) {
+      const handler = mockOn.mock.calls.find(([name]) => name === event)?.[1];
+      if (typeof handler !== 'function') {
+        throw new Error(`Missing ${event} handler`);
+      }
+      handler();
+    }
+    expect(disconnect).toHaveBeenCalledTimes(2);
+  });
+});
 
 describe('MqttClient discovery re-publish', () => {
   test('re-publishes discovery when additional device info changes after first data on same path (regression #235)', () => {

@@ -760,13 +760,18 @@ Venus commands above.
   same option names as the Venus command above, though this model sends
   different codes for them and has no `trading` mode. The device reports its
   mode back, so the *Working Mode* entity shows its real state.
-- `schedule/[1-6]/enabled`: Enables or disables a manual-mode schedule slot.
-- `schedule/[1-6]/start-time`: Sets the slot start time in `HH:MM` format.
-- `schedule/[1-6]/end-time`: Sets the slot end time in `HH:MM` format.
-- `schedule/[1-6]/power`: Sets the slot power in watts.
-- `schedule/[1-6]/direction`: Sets `charge`, `discharge` or `selfConsumption`.
-- `schedule/[1-6]/weekday`: Sets active weekdays using digits 0-6, where 0 is
-  Monday and 6 is Sunday.
+- `schedule/controls-enabled`: Opts into experimental schedule writes (`true`
+  or `false`). Off after every bridge restart or MQTT disconnect.
+- `schedule/[1-6]/enabled`: Prepares the slot enabled state.
+- `schedule/[1-6]/start-time`: Prepares the slot start time in `HH:MM` format.
+- `schedule/[1-6]/end-time`: Prepares the slot end time in `HH:MM` format.
+- `schedule/[1-6]/power`: Prepares the slot power, 0-1500 W.
+- `schedule/[1-6]/direction`: Prepares `charge`, `discharge` or `selfConsumption`.
+- `schedule/[1-6]/weekday`: Prepares active weekdays using digits 0-6, where 0
+  is Monday and 6 is Sunday.
+- `schedule/[1-6]/apply`: Sends a complete draft after validation (`PRESS`).
+- `schedule/[1-6]/reset`: Discards a draft and copies the last device values
+  (`PRESS`). This does not clear the slot on the battery.
 
 #### Venus E Mini schedule behavior
 
@@ -782,15 +787,43 @@ shows old values even after a schedule is removed in the Marstek app.
 - A slot created as enabled appears in the app. If it is then disabled, it stays
   visible in the app.
 
-Schedule slots must be configured in order. Writing a later slot while an
-earlier slot is empty can make the battery stop responding. Complete schedules
-must not overlap on any selected weekday, even when one or both schedules are
-disabled. Adjacent schedules are allowed.
+Schedule slots must be configured in order as a precaution: out-of-order writes
+were suspected of causing a firmware hang, but the exact trigger is not
+confirmed. Complete schedules must not overlap on any selected weekday, even
+when one or both schedules are disabled. Adjacent schedules are allowed. End
+time must be later than start time; split an overnight schedule into two slots.
+
+Home Assistant shows the battery's reported values separately from *Draft*
+controls. Draft controls, Apply buttons and the *Experimental Schedule Controls*
+switch are disabled by default in discovery. Enable the desired entities, then
+turn on that switch to allow writes. Editing a draft sends nothing to the
+battery. Periodic updates do not overwrite edited drafts. Drafts are held in
+memory and are lost when hm2mqtt restarts.
+
+Apply requires Manual mode and three valid runtime readings with advancing
+device time. It requests a fresh reading before writing and sends one complete
+command on the topic namespace of the latest live reading. It waits up to
+15 seconds for each step: the pre-write refresh, the matching acknowledgement,
+and a fresh read-back that confirms the written values. Other slots must remain
+unchanged. Only one Apply is allowed at a time; additional commands are rejected,
+not queued. After confirmation there is a ten-second cooldown.
+
+Missing, invalid or mismatched readings, a stopped device clock, a failed write,
+or a lost MQTT connection lock schedule writes. Readings and clock progress must
+be newer than the polling interval plus 15 seconds. After a lockout, obtain three
+new advancing readings and explicitly re-enable controls. There are no automatic
+retries, offline command queues, or retained schedule commands. *Schedule Control
+Status* and *Schedule Control Error* explain blocked operations.
+
+Use only one editor: do not change schedules in the Marstek app while editing or
+applying a Home Assistant draft. If the slot changes on the battery, reset the
+draft before editing it again. These precautions cannot prevent unknown firmware
+faults or prove that actual charging power follows the saved settings.
 
 hm2mqtt must not briefly enable a new schedule just to make it appear in the
 Marstek app. The battery could start charging or discharging before the second
-command disables it. New schedules should instead be prepared as a complete
-draft and sent once with an explicit *Apply* action. A new disabled schedule may
+command disables it. New schedules are prepared as a complete draft and sent
+once with an explicit *Apply* action. A new disabled schedule may
 remain hidden in the Marstek app. Users who need it to appear there must create
 it as enabled and disable it separately after the battery confirms the first
 change.
@@ -807,8 +840,12 @@ change.
 - `restart`: Reboots the device. Disabled by default.
 - `factory-reset`: Resets the device to factory settings. Disabled by default.
 
-**Beta.** Runtime polling and manual schedule commands have been confirmed on a
-real device. The other command formats were read out of the Marstek app rather
+**Beta.** Runtime polling and manual schedule command formats have been confirmed
+on a real device, but the guarded Apply workflow still needs hardware testing.
+Keep charging tests at **100 W or less**, use one editor, and stop testing if
+the clock, state of charge or actual power becomes inconsistent. The supported
+1500 W setting is not a recommended test rate.
+The other command formats were read out of the Marstek app rather
 than captured end to end, so those writes remain experimental.
 
 The Venus E Mini runs a second generation of Marstek's Venus firmware, together
@@ -836,8 +873,6 @@ power limit is a different case, and is called out below:
   by your timezone offset.
 - Reading the network info and error code, whose replies have a shape nothing
   here can parse yet.
-- Manual-mode scheduling, which the app assembles per call and the device
-  reports nothing back about.
 - Configuring WiFi, which carries network credentials and has no MQTT form.
 
 ### Jupiter Device Commands

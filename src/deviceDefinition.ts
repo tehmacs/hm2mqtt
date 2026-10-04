@@ -1,5 +1,9 @@
 import { HaComponentConfig } from './homeAssistantDiscovery.js';
-import { ControlHandlerDefinition } from './controlHandler.js';
+import {
+  ControlHandlerDefinition,
+  DeviceControlSession,
+  DeviceControlSessionContext,
+} from './controlHandler.js';
 import { HaAdvertisement } from './generateDiscoveryConfigs.js';
 import { Transform, MultiKeyTransform } from './transforms.js';
 import { levenshteinDistance } from './utils/stringDistance.js';
@@ -105,6 +109,7 @@ export type FieldDefinition<
  */
 export interface DeviceDefinition<T extends BaseDeviceData> {
   messages: MessageDefinition<T>[];
+  createControlSession?: (context: DeviceControlSessionContext) => DeviceControlSession;
   /**
    * Marks a device family whose field mapping has not been verified against
    * real hardware yet. Only affects the notice logged when such a device is
@@ -242,9 +247,11 @@ export function registerDeviceDefinition(
   {
     deviceTypes,
     beta = false,
+    createControlSession,
   }: {
     deviceTypes: string[];
     beta?: boolean;
+    createControlSession?: (context: DeviceControlSessionContext) => DeviceControlSession;
   },
   build: ({ message }: RegisterDeviceBuildArgs) => void,
 ): void {
@@ -299,6 +306,7 @@ export function registerDeviceDefinition(
     deviceDefinitionRegistry.set(deviceType, {
       messages,
       beta,
+      createControlSession,
     });
   }
 }
