@@ -1,8 +1,8 @@
-import { deviceFixtures } from '../../fixtures/devices.js';
+import { deviceFixtures, venusMiniFixture } from '../../fixtures/devices.js';
 import { Rig, entitySlug, canRunScenarios, startRig, waitFor } from '../harness/index.js';
 
 /**
- * A fresh installation: Home Assistant, a broker, three simulated devices and
+ * A fresh installation: Home Assistant, a broker, simulated devices and
  * the hm2mqtt build, wired together the way a user has them.
  *
  * The assertion that matters is negative — Home Assistant must not complain
@@ -11,6 +11,7 @@ import { Rig, entitySlug, canRunScenarios, startRig, waitFor } from '../harness/
  * Assistant log on every single message.
  */
 const describeE2e = canRunScenarios() ? describe : describe.skip;
+const fixtures = [...deviceFixtures, venusMiniFixture];
 
 /**
  * Known findings, not noise.
@@ -30,7 +31,7 @@ describeE2e('a fresh installation', () => {
   let rig: Rig;
 
   beforeAll(async () => {
-    rig = await startRig({ name: 'smoke', fixtures: deviceFixtures });
+    rig = await startRig({ name: 'smoke', fixtures });
     await rig.startHm2mqtt();
     // Discovery is announced only after a device has answered, so wait for
     // each device rather than for a fixed delay.
@@ -43,7 +44,7 @@ describeE2e('a fresh installation', () => {
     await rig?.stop();
   });
 
-  test.each(deviceFixtures.map(fixture => [fixture.deviceType] as const))(
+  test.each(fixtures.map(fixture => [fixture.deviceType] as const))(
     '%s announces entities that reach a real state',
     async deviceType => {
       const device = rig.devices.find(candidate => candidate.deviceType === deviceType)!;

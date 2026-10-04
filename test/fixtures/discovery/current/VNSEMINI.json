@@ -1,6 +1,6 @@
 {
   "deviceType": "VNSEMINI",
-  "state": "empty",
+  "state": "fixture:VNSEMINI-0",
   "components": {
     "homeassistant/binary_sensor/VNSEMINI_0123456789ab/led_enabled/config": {
       "availability": [
@@ -20,7 +20,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:led-on",
       "name": "Status LED",
@@ -52,7 +53,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "connectivity",
       "icon": "mdi:lan",
@@ -85,7 +87,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 1 Enabled",
@@ -117,7 +120,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 2 Enabled",
@@ -149,7 +153,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 3 Enabled",
@@ -181,7 +186,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 4 Enabled",
@@ -213,7 +219,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 5 Enabled",
@@ -245,7 +252,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 6 Enabled",
@@ -277,7 +285,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "connectivity",
       "icon": "mdi:wifi",
@@ -311,7 +320,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:delete-forever",
@@ -342,7 +352,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:current-ac",
@@ -373,7 +384,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:refresh",
@@ -404,7 +416,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:restart",
@@ -435,7 +448,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 1 Apply",
@@ -465,7 +479,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 1 Reset Draft",
@@ -495,7 +510,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 2 Apply",
@@ -525,7 +541,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 2 Reset Draft",
@@ -555,7 +572,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 3 Apply",
@@ -585,7 +603,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 3 Reset Draft",
@@ -615,7 +634,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 4 Apply",
@@ -645,7 +665,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 4 Reset Draft",
@@ -675,7 +696,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 5 Apply",
@@ -705,7 +727,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 5 Reset Draft",
@@ -735,7 +758,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 6 Apply",
@@ -765,7 +789,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 6 Reset Draft",
@@ -795,7 +820,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "battery",
       "max": 90,
@@ -830,7 +856,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "max": 1500,
@@ -846,7 +873,6 @@
       "unit_of_measurement": "W",
       "value_template": "{{ value_json.drafts[0].power }}"
     },
-    "homeassistant/number/VNSEMINI_0123456789ab/schedule_1_power/config": null,
     "homeassistant/number/VNSEMINI_0123456789ab/schedule_2_draft_power/config": {
       "availability": [
         {
@@ -866,7 +892,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "max": 1500,
@@ -882,7 +909,6 @@
       "unit_of_measurement": "W",
       "value_template": "{{ value_json.drafts[1].power }}"
     },
-    "homeassistant/number/VNSEMINI_0123456789ab/schedule_2_power/config": null,
     "homeassistant/number/VNSEMINI_0123456789ab/schedule_3_draft_power/config": {
       "availability": [
         {
@@ -902,7 +928,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "max": 1500,
@@ -918,7 +945,6 @@
       "unit_of_measurement": "W",
       "value_template": "{{ value_json.drafts[2].power }}"
     },
-    "homeassistant/number/VNSEMINI_0123456789ab/schedule_3_power/config": null,
     "homeassistant/number/VNSEMINI_0123456789ab/schedule_4_draft_power/config": {
       "availability": [
         {
@@ -938,7 +964,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "max": 1500,
@@ -954,7 +981,6 @@
       "unit_of_measurement": "W",
       "value_template": "{{ value_json.drafts[3].power }}"
     },
-    "homeassistant/number/VNSEMINI_0123456789ab/schedule_4_power/config": null,
     "homeassistant/number/VNSEMINI_0123456789ab/schedule_5_draft_power/config": {
       "availability": [
         {
@@ -974,7 +1000,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "max": 1500,
@@ -990,7 +1017,6 @@
       "unit_of_measurement": "W",
       "value_template": "{{ value_json.drafts[4].power }}"
     },
-    "homeassistant/number/VNSEMINI_0123456789ab/schedule_5_power/config": null,
     "homeassistant/number/VNSEMINI_0123456789ab/schedule_6_draft_power/config": {
       "availability": [
         {
@@ -1010,7 +1036,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "max": 1500,
@@ -1026,7 +1053,6 @@
       "unit_of_measurement": "W",
       "value_template": "{{ value_json.drafts[5].power }}"
     },
-    "homeassistant/number/VNSEMINI_0123456789ab/schedule_6_power/config": null,
     "homeassistant/select/VNSEMINI_0123456789ab/meter_type/config": {
       "availability": [
         {
@@ -1047,7 +1073,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:meter-electric",
@@ -1072,7 +1099,6 @@
       },
       "unique_id": "0123456789ab_meter_type"
     },
-    "homeassistant/select/VNSEMINI_0123456789ab/schedule_1_direction/config": null,
     "homeassistant/select/VNSEMINI_0123456789ab/schedule_1_draft_direction/config": {
       "availability": [
         {
@@ -1093,7 +1119,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 1 Draft Direction",
@@ -1106,7 +1133,6 @@
       "unique_id": "0123456789ab_schedule_1_draft_direction",
       "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\"} %}{% set stringifiedValue = value_json.drafts[0].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
     },
-    "homeassistant/select/VNSEMINI_0123456789ab/schedule_2_direction/config": null,
     "homeassistant/select/VNSEMINI_0123456789ab/schedule_2_draft_direction/config": {
       "availability": [
         {
@@ -1127,7 +1153,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 2 Draft Direction",
@@ -1140,7 +1167,6 @@
       "unique_id": "0123456789ab_schedule_2_draft_direction",
       "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\"} %}{% set stringifiedValue = value_json.drafts[1].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
     },
-    "homeassistant/select/VNSEMINI_0123456789ab/schedule_3_direction/config": null,
     "homeassistant/select/VNSEMINI_0123456789ab/schedule_3_draft_direction/config": {
       "availability": [
         {
@@ -1161,7 +1187,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 3 Draft Direction",
@@ -1174,7 +1201,6 @@
       "unique_id": "0123456789ab_schedule_3_draft_direction",
       "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\"} %}{% set stringifiedValue = value_json.drafts[2].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
     },
-    "homeassistant/select/VNSEMINI_0123456789ab/schedule_4_direction/config": null,
     "homeassistant/select/VNSEMINI_0123456789ab/schedule_4_draft_direction/config": {
       "availability": [
         {
@@ -1195,7 +1221,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 4 Draft Direction",
@@ -1208,7 +1235,6 @@
       "unique_id": "0123456789ab_schedule_4_draft_direction",
       "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\"} %}{% set stringifiedValue = value_json.drafts[3].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
     },
-    "homeassistant/select/VNSEMINI_0123456789ab/schedule_5_direction/config": null,
     "homeassistant/select/VNSEMINI_0123456789ab/schedule_5_draft_direction/config": {
       "availability": [
         {
@@ -1229,7 +1255,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 5 Draft Direction",
@@ -1242,7 +1269,6 @@
       "unique_id": "0123456789ab_schedule_5_draft_direction",
       "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\"} %}{% set stringifiedValue = value_json.drafts[4].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
     },
-    "homeassistant/select/VNSEMINI_0123456789ab/schedule_6_direction/config": null,
     "homeassistant/select/VNSEMINI_0123456789ab/schedule_6_draft_direction/config": {
       "availability": [
         {
@@ -1263,7 +1289,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 6 Draft Direction",
@@ -1296,7 +1323,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:cog",
       "name": "Working Mode",
@@ -1327,7 +1355,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Backup Power",
@@ -1359,7 +1388,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "energy",
       "name": "Battery Charged Energy Today",
@@ -1391,7 +1421,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "energy",
       "name": "Battery Charged Energy Total",
@@ -1423,7 +1454,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "energy",
       "name": "Battery Discharged Energy Today",
@@ -1455,7 +1487,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "energy",
       "name": "Battery Discharged Energy Total",
@@ -1487,7 +1520,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "energy_storage",
       "name": "Battery Energy Stored",
@@ -1519,7 +1553,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Battery Power",
@@ -1551,7 +1586,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "battery",
       "name": "Battery State of Charge",
@@ -1583,7 +1619,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:bluetooth",
@@ -1614,7 +1651,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:sine-wave",
       "name": "CT Phase",
@@ -1644,7 +1682,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:current-ac",
       "name": "CT Type",
@@ -1674,7 +1713,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:information",
@@ -1705,7 +1745,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:state-machine",
       "name": "Device State",
@@ -1735,7 +1776,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "timestamp",
       "icon": "mdi:clock-time-four-outline",
@@ -1766,7 +1808,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:transmission-tower-export",
       "name": "Feed-in Power Limit",
@@ -1796,7 +1839,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "energy",
       "name": "Grid Exported Energy Today",
@@ -1828,7 +1872,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "energy",
       "name": "Grid Imported Energy Today",
@@ -1860,7 +1905,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "energy",
       "name": "Grid Imported Energy Total",
@@ -1892,7 +1938,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:help-circle-outline",
@@ -1923,7 +1970,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "enabled_by_default": false,
@@ -1956,7 +2004,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Grid Power",
@@ -1988,7 +2037,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:information",
@@ -2019,7 +2069,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "enabled_by_default": false,
@@ -2052,7 +2103,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "energy",
       "name": "Load Consumed Energy Today",
@@ -2084,7 +2136,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:help-circle-outline",
@@ -2115,7 +2168,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Phase A Power",
@@ -2147,7 +2201,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Phase B Power",
@@ -2179,7 +2234,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Phase C Power",
@@ -2211,7 +2267,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:information",
       "name": "PMU Firmware Version",
@@ -2222,6 +2279,518 @@
       "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
       "unique_id": "0123456789ab_pmu_firmware_version",
       "value_template": "{{ value_json.pmuFirmwareVersion }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_apt/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw apt",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_apt",
+      "value_template": "{{ value_json.raw.apt }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_ar/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw ar",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_ar",
+      "value_template": "{{ value_json.raw.ar }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_aw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw aw",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_aw",
+      "value_template": "{{ value_json.raw.aw }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_ct/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw ct",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_ct",
+      "value_template": "{{ value_json.raw.ct }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_cv/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw cv",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_cv",
+      "value_template": "{{ value_json.raw.cv }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_e1/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw e1",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_e1",
+      "value_template": "{{ value_json.raw.e1 }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_e2/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw e2",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_e2",
+      "value_template": "{{ value_json.raw.e2 }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_e3/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw e3",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_e3",
+      "value_template": "{{ value_json.raw.e3 }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_e4/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw e4",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_e4",
+      "value_template": "{{ value_json.raw.e4 }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_e5/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw e5",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_e5",
+      "value_template": "{{ value_json.raw.e5 }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_e6/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw e6",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_e6",
+      "value_template": "{{ value_json.raw.e6 }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_e7/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw e7",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_e7",
+      "value_template": "{{ value_json.raw.e7 }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_eg/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw eg",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_eg",
+      "value_template": "{{ value_json.raw.eg }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_gn/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw gn",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_gn",
+      "value_template": "{{ value_json.raw.gn }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_tgb/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw tgb",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_tgb",
+      "value_template": "{{ value_json.raw.tgb }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/raw_tgp/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Raw tgp",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_raw_tgp",
+      "value_template": "{{ value_json.raw.tgp }}"
     },
     "homeassistant/sensor/VNSEMINI_0123456789ab/recharge_type/config": {
       "availability": [
@@ -2241,7 +2810,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:help-circle-outline",
@@ -2272,7 +2842,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:swap-vertical",
       "name": "Schedule Slot 1 Direction",
@@ -2302,7 +2873,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 1 End Time",
@@ -2332,7 +2904,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:help-circle-outline",
@@ -2363,7 +2936,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Schedule Slot 1 Power",
@@ -2371,10 +2945,43 @@
         "name": "hm2mqtt",
         "url": "https://github.com/tomquist/hm2mqtt"
       },
+      "state_class": "measurement",
       "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
       "unique_id": "0123456789ab_schedule_1_power",
       "unit_of_measurement": "W",
       "value_template": "{{ value_json.timePeriods[0].power }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_1_repeat_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Schedule Slot 1 Repeat (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_1_repeat_raw",
+      "value_template": "{{ value_json.timePeriods[0].repeatRaw }}"
     },
     "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_1_start_time/config": {
       "availability": [
@@ -2394,7 +3001,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 1 Start Time",
@@ -2424,7 +3032,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:calendar-week",
       "name": "Schedule Slot 1 Weekday",
@@ -2454,7 +3063,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:swap-vertical",
       "name": "Schedule Slot 2 Direction",
@@ -2484,7 +3094,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 2 End Time",
@@ -2514,7 +3125,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:help-circle-outline",
@@ -2545,7 +3157,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Schedule Slot 2 Power",
@@ -2553,10 +3166,43 @@
         "name": "hm2mqtt",
         "url": "https://github.com/tomquist/hm2mqtt"
       },
+      "state_class": "measurement",
       "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
       "unique_id": "0123456789ab_schedule_2_power",
       "unit_of_measurement": "W",
       "value_template": "{{ value_json.timePeriods[1].power }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_2_repeat_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Schedule Slot 2 Repeat (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_2_repeat_raw",
+      "value_template": "{{ value_json.timePeriods[1].repeatRaw }}"
     },
     "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_2_start_time/config": {
       "availability": [
@@ -2576,7 +3222,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 2 Start Time",
@@ -2606,7 +3253,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:calendar-week",
       "name": "Schedule Slot 2 Weekday",
@@ -2636,7 +3284,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:swap-vertical",
       "name": "Schedule Slot 3 Direction",
@@ -2666,7 +3315,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 3 End Time",
@@ -2696,7 +3346,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:help-circle-outline",
@@ -2727,7 +3378,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Schedule Slot 3 Power",
@@ -2735,10 +3387,43 @@
         "name": "hm2mqtt",
         "url": "https://github.com/tomquist/hm2mqtt"
       },
+      "state_class": "measurement",
       "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
       "unique_id": "0123456789ab_schedule_3_power",
       "unit_of_measurement": "W",
       "value_template": "{{ value_json.timePeriods[2].power }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_3_repeat_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Schedule Slot 3 Repeat (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_3_repeat_raw",
+      "value_template": "{{ value_json.timePeriods[2].repeatRaw }}"
     },
     "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_3_start_time/config": {
       "availability": [
@@ -2758,7 +3443,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 3 Start Time",
@@ -2788,7 +3474,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:calendar-week",
       "name": "Schedule Slot 3 Weekday",
@@ -2818,7 +3505,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:swap-vertical",
       "name": "Schedule Slot 4 Direction",
@@ -2848,7 +3536,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 4 End Time",
@@ -2878,7 +3567,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:help-circle-outline",
@@ -2909,7 +3599,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Schedule Slot 4 Power",
@@ -2917,10 +3608,43 @@
         "name": "hm2mqtt",
         "url": "https://github.com/tomquist/hm2mqtt"
       },
+      "state_class": "measurement",
       "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
       "unique_id": "0123456789ab_schedule_4_power",
       "unit_of_measurement": "W",
       "value_template": "{{ value_json.timePeriods[3].power }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_4_repeat_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Schedule Slot 4 Repeat (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_4_repeat_raw",
+      "value_template": "{{ value_json.timePeriods[3].repeatRaw }}"
     },
     "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_4_start_time/config": {
       "availability": [
@@ -2940,7 +3664,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 4 Start Time",
@@ -2970,7 +3695,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:calendar-week",
       "name": "Schedule Slot 4 Weekday",
@@ -3000,7 +3726,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:swap-vertical",
       "name": "Schedule Slot 5 Direction",
@@ -3030,7 +3757,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 5 End Time",
@@ -3060,7 +3788,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:help-circle-outline",
@@ -3091,7 +3820,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Schedule Slot 5 Power",
@@ -3099,10 +3829,43 @@
         "name": "hm2mqtt",
         "url": "https://github.com/tomquist/hm2mqtt"
       },
+      "state_class": "measurement",
       "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
       "unique_id": "0123456789ab_schedule_5_power",
       "unit_of_measurement": "W",
       "value_template": "{{ value_json.timePeriods[4].power }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_5_repeat_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Schedule Slot 5 Repeat (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_5_repeat_raw",
+      "value_template": "{{ value_json.timePeriods[4].repeatRaw }}"
     },
     "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_5_start_time/config": {
       "availability": [
@@ -3122,7 +3885,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 5 Start Time",
@@ -3152,7 +3916,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:calendar-week",
       "name": "Schedule Slot 5 Weekday",
@@ -3182,7 +3947,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:swap-vertical",
       "name": "Schedule Slot 6 Direction",
@@ -3212,7 +3978,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 6 End Time",
@@ -3242,7 +4009,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:help-circle-outline",
@@ -3273,7 +4041,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Schedule Slot 6 Power",
@@ -3281,10 +4050,43 @@
         "name": "hm2mqtt",
         "url": "https://github.com/tomquist/hm2mqtt"
       },
+      "state_class": "measurement",
       "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
       "unique_id": "0123456789ab_schedule_6_power",
       "unit_of_measurement": "W",
       "value_template": "{{ value_json.timePeriods[5].power }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_6_repeat_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Schedule Slot 6 Repeat (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_6_repeat_raw",
+      "value_template": "{{ value_json.timePeriods[5].repeatRaw }}"
     },
     "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_6_start_time/config": {
       "availability": [
@@ -3304,7 +4106,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:clock-time-four-outline",
       "name": "Schedule Slot 6 Start Time",
@@ -3334,7 +4137,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:calendar-week",
       "name": "Schedule Slot 6 Weekday",
@@ -3364,7 +4168,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "name": "Schedule Control Error",
       "origin": {
@@ -3393,7 +4198,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "name": "Schedule Control Status",
       "origin": {
@@ -3422,7 +4228,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:help-circle-outline",
@@ -3453,7 +4260,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "timestamp",
       "icon": "mdi:clock-time-four-outline",
@@ -3484,7 +4292,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "power",
       "name": "Total CT Power",
@@ -3516,7 +4325,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "device_class": "signal_strength",
       "icon": "mdi:wifi",
@@ -3550,7 +4360,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "icon": "mdi:bluetooth",
       "name": "Bluetooth Advertising",
@@ -3583,7 +4394,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 1 Draft Enabled",
@@ -3599,7 +4411,6 @@
       "unique_id": "0123456789ab_schedule_1_draft_enabled",
       "value_template": "{{ value_json.drafts[0].enabled }}"
     },
-    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_1_enabled/config": null,
     "homeassistant/switch/VNSEMINI_0123456789ab/schedule_2_draft_enabled/config": {
       "availability": [
         {
@@ -3619,7 +4430,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 2 Draft Enabled",
@@ -3635,7 +4447,6 @@
       "unique_id": "0123456789ab_schedule_2_draft_enabled",
       "value_template": "{{ value_json.drafts[1].enabled }}"
     },
-    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_2_enabled/config": null,
     "homeassistant/switch/VNSEMINI_0123456789ab/schedule_3_draft_enabled/config": {
       "availability": [
         {
@@ -3655,7 +4466,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 3 Draft Enabled",
@@ -3671,7 +4483,6 @@
       "unique_id": "0123456789ab_schedule_3_draft_enabled",
       "value_template": "{{ value_json.drafts[2].enabled }}"
     },
-    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_3_enabled/config": null,
     "homeassistant/switch/VNSEMINI_0123456789ab/schedule_4_draft_enabled/config": {
       "availability": [
         {
@@ -3691,7 +4502,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 4 Draft Enabled",
@@ -3707,7 +4519,6 @@
       "unique_id": "0123456789ab_schedule_4_draft_enabled",
       "value_template": "{{ value_json.drafts[3].enabled }}"
     },
-    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_4_enabled/config": null,
     "homeassistant/switch/VNSEMINI_0123456789ab/schedule_5_draft_enabled/config": {
       "availability": [
         {
@@ -3727,7 +4538,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 5 Draft Enabled",
@@ -3743,7 +4555,6 @@
       "unique_id": "0123456789ab_schedule_5_draft_enabled",
       "value_template": "{{ value_json.drafts[4].enabled }}"
     },
-    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_5_enabled/config": null,
     "homeassistant/switch/VNSEMINI_0123456789ab/schedule_6_draft_enabled/config": {
       "availability": [
         {
@@ -3763,7 +4574,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 6 Draft Enabled",
@@ -3779,7 +4591,6 @@
       "unique_id": "0123456789ab_schedule_6_draft_enabled",
       "value_template": "{{ value_json.drafts[5].enabled }}"
     },
-    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_6_enabled/config": null,
     "homeassistant/switch/VNSEMINI_0123456789ab/schedule_controls_enabled/config": {
       "availability": [
         {
@@ -3799,7 +4610,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Experimental Schedule Controls",
@@ -3834,7 +4646,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "icon": "mdi:identifier",
@@ -3865,7 +4678,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 1 Draft End Time",
@@ -3897,7 +4711,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 1 Draft Start Time",
@@ -3929,7 +4744,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 1 Draft Weekdays",
@@ -3942,9 +4758,6 @@
       "unique_id": "0123456789ab_schedule_1_draft_weekday",
       "value_template": "{{ value_json.drafts[0].weekday }}"
     },
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_1_end_time/config": null,
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_1_start_time/config": null,
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_1_weekday/config": null,
     "homeassistant/text/VNSEMINI_0123456789ab/schedule_2_draft_end_time/config": {
       "availability": [
         {
@@ -3964,7 +4777,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 2 Draft End Time",
@@ -3996,7 +4810,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 2 Draft Start Time",
@@ -4028,7 +4843,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 2 Draft Weekdays",
@@ -4041,9 +4857,6 @@
       "unique_id": "0123456789ab_schedule_2_draft_weekday",
       "value_template": "{{ value_json.drafts[1].weekday }}"
     },
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_2_end_time/config": null,
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_2_start_time/config": null,
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_2_weekday/config": null,
     "homeassistant/text/VNSEMINI_0123456789ab/schedule_3_draft_end_time/config": {
       "availability": [
         {
@@ -4063,7 +4876,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 3 Draft End Time",
@@ -4095,7 +4909,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 3 Draft Start Time",
@@ -4127,7 +4942,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 3 Draft Weekdays",
@@ -4140,9 +4956,6 @@
       "unique_id": "0123456789ab_schedule_3_draft_weekday",
       "value_template": "{{ value_json.drafts[2].weekday }}"
     },
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_3_end_time/config": null,
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_3_start_time/config": null,
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_3_weekday/config": null,
     "homeassistant/text/VNSEMINI_0123456789ab/schedule_4_draft_end_time/config": {
       "availability": [
         {
@@ -4162,7 +4975,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 4 Draft End Time",
@@ -4194,7 +5008,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 4 Draft Start Time",
@@ -4226,7 +5041,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 4 Draft Weekdays",
@@ -4239,9 +5055,6 @@
       "unique_id": "0123456789ab_schedule_4_draft_weekday",
       "value_template": "{{ value_json.drafts[3].weekday }}"
     },
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_4_end_time/config": null,
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_4_start_time/config": null,
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_4_weekday/config": null,
     "homeassistant/text/VNSEMINI_0123456789ab/schedule_5_draft_end_time/config": {
       "availability": [
         {
@@ -4261,7 +5074,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 5 Draft End Time",
@@ -4293,7 +5107,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 5 Draft Start Time",
@@ -4325,7 +5140,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 5 Draft Weekdays",
@@ -4338,9 +5154,6 @@
       "unique_id": "0123456789ab_schedule_5_draft_weekday",
       "value_template": "{{ value_json.drafts[4].weekday }}"
     },
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_5_end_time/config": null,
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_5_start_time/config": null,
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_5_weekday/config": null,
     "homeassistant/text/VNSEMINI_0123456789ab/schedule_6_draft_end_time/config": {
       "availability": [
         {
@@ -4360,7 +5173,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 6 Draft End Time",
@@ -4392,7 +5206,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 6 Draft Start Time",
@@ -4424,7 +5239,8 @@
         "ids": ["hame_energy_0123456789ab"],
         "manufacturer": "HAME Energy",
         "model_id": "VNSEMINI",
-        "name": "HAME Energy VNSEMINI 0123456789ab"
+        "name": "HAME Energy VNSEMINI 0123456789ab",
+        "sw_version": "301"
       },
       "enabled_by_default": false,
       "name": "Schedule Slot 6 Draft Weekdays",
@@ -4436,9 +5252,6 @@
       "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
       "unique_id": "0123456789ab_schedule_6_draft_weekday",
       "value_template": "{{ value_json.drafts[5].weekday }}"
-    },
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_6_end_time/config": null,
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_6_start_time/config": null,
-    "homeassistant/text/VNSEMINI_0123456789ab/schedule_6_weekday/config": null
+    }
   }
 }

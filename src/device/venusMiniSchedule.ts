@@ -25,13 +25,6 @@ export const MINI_SCHEDULE_COOLDOWN = 10000;
 const HEALTH_SAMPLES = 3;
 const directions = { charge: 1, discharge: 2, selfConsumption: 3 } as const;
 
-export function miniRepeatMaskToWeekdaySet(mask: number): WeekdaySet {
-  return '0123456'
-    .split('')
-    .filter((_, index) => mask & (1 << index))
-    .join('') as WeekdaySet;
-}
-
 function formatTime(time: string | undefined): string | undefined {
   const match = time && /^([0-1]?\d|2[0-3]):([0-5]\d)$/.exec(time);
   return match ? `${match[1].padStart(2, '0')}:${match[2]}` : undefined;
@@ -487,7 +480,7 @@ export class VenusMiniScheduleSession implements DeviceControlSession {
         }
       } else if (this.pending || !this.healthy()) {
         this.warn(
-          'Three fresh, advancing runtime samples are required before enabling controls. (Wait for 3 minutes)',
+          'Three fresh, advancing runtime samples are required before enabling controls. With a 60-second relay, this can take about 3 minutes.',
         );
       } else {
         this.locked = false;

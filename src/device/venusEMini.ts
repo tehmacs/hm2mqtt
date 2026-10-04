@@ -25,12 +25,16 @@ import {
   textComponent,
 } from '../homeAssistantDiscovery.js';
 import logger from '../logger.js';
-import { divide, equalsBoolean, identity, map, negateIfPositive, number } from '../transforms.js';
 import {
-  MINI_SCHEDULE_POWER_MAX,
-  VenusMiniScheduleSession,
-  miniRepeatMaskToWeekdaySet,
-} from './venusMiniSchedule.js';
+  bitMaskToWeekday,
+  divide,
+  equalsBoolean,
+  identity,
+  map,
+  negateIfPositive,
+  number,
+} from '../transforms.js';
+import { MINI_SCHEDULE_POWER_MAX, VenusMiniScheduleSession } from './venusMiniSchedule.js';
 import type { VenusMiniScheduleData } from '../types.js';
 
 /**
@@ -755,6 +759,7 @@ function registerVenusMiniRuntimeInfoMessage(message: BuildMessageFn) {
           name: `Schedule Slot ${i} Power`,
           device_class: 'power',
           unit_of_measurement: 'W',
+          state_class: 'measurement',
         }),
       );
 
@@ -825,7 +830,7 @@ function registerVenusMiniRuntimeInfoMessage(message: BuildMessageFn) {
       field({
         key: `re${i}`,
         path: ['timePeriods', idx, 'weekday'],
-        transform: value => miniRepeatMaskToWeekdaySet(parseInt(value, 10)),
+        transform: bitMaskToWeekday(),
       });
       advertise(
         ['timePeriods', idx, 'weekday'],
@@ -835,37 +840,14 @@ function registerVenusMiniRuntimeInfoMessage(message: BuildMessageFn) {
           icon: 'mdi:calendar-week',
         }),
       );
-      // Remove retained discovery for the former immediate-write entities.
       advertise(
-        ['timePeriods', idx, 'enabled'],
-        switchComponent({ id: `schedule_${i}_enabled`, name: '', command: '' }),
-        { enabled: () => false },
-      );
-      advertise(
-        ['timePeriods', idx, 'power'],
-        numberComponent({ id: `schedule_${i}_power`, name: '', command: '' }),
-        { enabled: () => false },
-      );
-      for (const [key, suffix] of [
-        ['startTime', 'start_time'],
-        ['endTime', 'end_time'],
-        ['weekday', 'weekday'],
-      ] as const) {
-        advertise(
-          ['timePeriods', idx, key],
-          textComponent({ id: `schedule_${i}_${suffix}`, name: '', command: '' }),
-          { enabled: () => false },
-        );
-      }
-      advertise(
-        ['timePeriods', idx, 'direction'],
-        selectComponent<VenusMiniScheduleDirection>({
-          id: `schedule_${i}_direction`,
-          name: '',
-          command: '',
-          valueMappings: { charge: '', discharge: '', selfConsumption: '', unknown: '' },
+        ['timePeriods', idx, 'repeatRaw'],
+        sensorComponent<number>({
+          id: `schedule_${i}_repeat_raw`,
+          name: `Schedule Slot ${i} Repeat (Raw)`,
+          icon: 'mdi:help-circle-outline',
+          enabled_by_default: false,
         }),
-        { enabled: () => false },
       );
     }
 

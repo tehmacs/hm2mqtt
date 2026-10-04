@@ -204,8 +204,18 @@ These checks do not establish firmware safety. Acknowledgements contain no
 transaction identifier, so a delayed acknowledgement for the same slot cannot
 be distinguished from the current one. Post-write telemetry reduces that risk
 but cannot prove actual power-control behavior or exclude concurrent app writes.
-The new workflow needs hardware validation, with charging tests limited to
-100 W or less.
+Limited tests on one Mini confirmed editing an existing slot and
+creating a new slot. Its reported firmware identifiers were PMU 301,
+inverter 270 and DC-DC 269. The transport was hame-relay 1.5.0 through Marstek's
+cloud, with roughly 60-second telemetry synchronization. This is not a
+compatibility guarantee for other firmware, direct MQTT, all directions or all
+failure-recovery paths.
+
+The `time` field has no timezone offset. Its parser uses the hm2mqtt process
+timezone, so a container's `TZ` must match the battery's local timezone. Use an
+IANA name so daylight-saving rules are applied. Clock jumps or ambiguous
+fall-back readings can pause or lock writes; do not bypass that guard or
+automatically resynchronize the device clock.
 
 ## A `cd=60` ambiguity worth knowing about
 

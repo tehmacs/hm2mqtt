@@ -801,7 +801,9 @@ battery. Periodic updates do not overwrite edited drafts. Drafts are held in
 memory and are lost when hm2mqtt restarts.
 
 Apply requires Manual mode and three valid runtime readings with advancing
-device time. It requests a fresh reading before writing and sends one complete
+device time. Startup readiness depends on the reporting cadence; a relay that
+synchronizes once a minute can take about three minutes. It requests a fresh
+reading before writing and sends one complete
 command on the topic namespace of the latest live reading. It waits up to
 150 seconds for each telemetry step (pre-write refresh and read-back), allowing
 for a relay that synchronizes once a minute and skips a cycle. Cached or older
@@ -831,6 +833,14 @@ applying a Home Assistant draft. If the slot changes on the battery, reset the
 draft before editing it again. These precautions cannot prevent unknown firmware
 faults or prove that actual charging power follows the saved settings.
 
+The Mini reports its clock as local time without a timezone. Configure the
+hm2mqtt process timezone to match the battery. For Docker or Kubernetes, set the
+container environment variable `TZ` to an IANA timezone such as `Europe/Rome`
+or `Europe/Berlin`; use your actual location, not a fixed UTC offset. A UTC
+container interpreting a summer-time clock can display *Device Time* hours in
+the future. Clock changes, including daylight-saving transitions, can pause or
+lock schedule controls until advancing readings are trustworthy again.
+
 hm2mqtt must not briefly enable a new schedule just to make it appear in the
 Marstek app. The battery could start charging or discharging before the second
 command disables it. New schedules are prepared as a complete draft and sent
@@ -853,7 +863,10 @@ change.
 - `factory-reset`: Resets the device to factory settings. Disabled by default.
 
 **Beta.** Runtime polling and manual schedule command formats have been confirmed
-on a real device, but the guarded Apply workflow still needs hardware testing.
+on a real device. Limited 100 W tests confirmed editing an existing charging
+slot and creating a new slot visible in Home Assistant and the Marstek app.
+Other directions, all slot combinations and recovery from every failure have
+not been hardware-verified.
 Keep charging tests at **100 W or less**, use one editor, and stop testing if
 the clock, state of charge or actual power becomes inconsistent. The supported
 1500 W setting is not a recommended test rate.

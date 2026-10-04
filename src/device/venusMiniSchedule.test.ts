@@ -702,7 +702,7 @@ describe('Venus E Mini guarded schedules', () => {
     expect(buildMiniScheduleCommand(1, configured({ power: 1501 }))).toBeUndefined();
   });
 
-  test('advertises separate reported values, disabled draft controls, Apply/reset and migration removals', () => {
+  test('preserves reported sensors alongside disabled draft controls and Apply/reset', () => {
     runtime();
     const topics = manager.getDeviceTopics(device)!;
     const configs = generateDiscoveryConfigs(
@@ -726,6 +726,16 @@ describe('Venus E Mini guarded schedules', () => {
       configs.find(entry => entry.config?.name === 'Schedule Slot 1 Apply')?.config
         ?.enabled_by_default,
     ).toBe(false);
-    expect(configs.filter(entry => entry.config == null)).toHaveLength(36);
+    expect(
+      configs.find(entry => entry.config?.name === 'Schedule Slot 1 Power')?.config,
+    ).toMatchObject({
+      state_class: 'measurement',
+    });
+    expect(
+      configs.find(entry => entry.config?.name === 'Schedule Slot 1 Repeat (Raw)')?.config,
+    ).toMatchObject({
+      enabled_by_default: false,
+    });
+    expect(configs.filter(entry => entry.config == null)).toHaveLength(0);
   });
 });
