@@ -148,7 +148,9 @@ export class MqttClient {
       return false;
     }
     return deviceDefinition.messages.some(
-      message => message.refreshDataPayload === 'cd=1' && message.publishPath === publishPath,
+      message =>
+        ['cd=1', 'cd=01'].includes(message.refreshDataPayload) &&
+        message.publishPath === publishPath,
     );
   }
 

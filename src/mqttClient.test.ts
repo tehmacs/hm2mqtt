@@ -95,6 +95,72 @@ describe('MqttClient guarded delivery', () => {
 });
 
 describe('MqttClient discovery re-publish', () => {
+  test.each(['cd=1', 'cd=01'])(
+    'announces discovery for runtime poll %s only after its response',
+    refreshDataPayload => {
+      mockPublishDiscoveryConfigs.mockClear();
+      const previousDefinition = mockGetDeviceDefinition.getMockImplementation();
+      mockGetDeviceDefinition.mockReturnValue({
+        messages: [
+          {
+            refreshDataPayload,
+            publishPath: 'data',
+            getAdditionalDeviceInfo: () => ({}),
+          },
+          {
+            refreshDataPayload: 'cd=59',
+            publishPath: 'ct',
+            getAdditionalDeviceInfo: () => ({}),
+          },
+        ],
+      });
+      const device: Device = { deviceType: 'VNSEMINI-0', deviceId: 'mini' };
+      const topics = {
+        deviceTopicOld: 'hame_energy/VNSEMINI-0/device/mini/ctrl',
+        deviceTopicNew: 'marstek_energy/VNSEMINI-0/device/mini/ctrl',
+        deviceControlTopicOld: 'hame_energy/VNSEMINI-0/App/mini/ctrl',
+        deviceControlTopicNew: 'marstek_energy/VNSEMINI-0/App/mini/ctrl',
+        publishTopic: 'hm2mqtt/VNSEMINI-0/device/mini',
+        controlSubscriptionTopic: 'hm2mqtt/VNSEMINI-0/control/mini',
+        availabilityTopic: 'hm2mqtt/VNSEMINI-0/availability/mini',
+      };
+      const manager = {
+        getDeviceTopics: () => topics,
+        getDeviceState: () => ({}),
+      } as DeviceManager;
+      const config: MqttConfig = {
+        brokerUrl: 'mqtt://localhost',
+        clientId: 'test',
+        topicPrefix: 'hm2mqtt',
+        autodiscoveryTopicPrefix: 'homeassistant',
+        devices: [device],
+        responseTimeout: 15000,
+      };
+      try {
+        const client = new MqttClient(config, manager, jest.fn());
+        client.onDeviceDataReceived(device, 'ct');
+        expect(mockPublishDiscoveryConfigs).not.toHaveBeenCalled();
+        client.onDeviceDataReceived(device, 'data');
+        expect(mockPublishDiscoveryConfigs).toHaveBeenCalledTimes(1);
+        expect(mockPublishDiscoveryConfigs).toHaveBeenCalledWith(
+          mockClient,
+          device,
+          topics,
+          {},
+          'hm2mqtt',
+          'homeassistant',
+          {},
+        );
+        client.onDeviceDataReceived(device, 'data');
+        expect(mockPublishDiscoveryConfigs).toHaveBeenCalledTimes(1);
+      } finally {
+        if (previousDefinition) {
+          mockGetDeviceDefinition.mockImplementation(previousDefinition);
+        }
+      }
+    },
+  );
+
   test('re-publishes discovery when additional device info changes after first data on same path (regression #235)', () => {
     mockPublishDiscoveryConfigs.mockClear();
 
