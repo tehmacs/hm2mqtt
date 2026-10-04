@@ -1,0 +1,4444 @@
+{
+  "deviceType": "VNSEMINI",
+  "state": "empty",
+  "components": {
+    "homeassistant/binary_sensor/VNSEMINI_0123456789ab/led_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:led-on",
+      "name": "Status LED",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": false,
+      "payload_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_led_enabled",
+      "value_template": "{{ value_json.ledEnabled }}"
+    },
+    "homeassistant/binary_sensor/VNSEMINI_0123456789ab/mqtt_status/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "connectivity",
+      "icon": "mdi:lan",
+      "name": "MQTT Status",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": false,
+      "payload_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_mqtt_status",
+      "value_template": "{{ value_json.mqttStatus }}"
+    },
+    "homeassistant/binary_sensor/VNSEMINI_0123456789ab/schedule_1_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 1 Enabled",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": false,
+      "payload_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_1_enabled",
+      "value_template": "{{ value_json.timePeriods[0].enabled }}"
+    },
+    "homeassistant/binary_sensor/VNSEMINI_0123456789ab/schedule_2_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 2 Enabled",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": false,
+      "payload_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_2_enabled",
+      "value_template": "{{ value_json.timePeriods[1].enabled }}"
+    },
+    "homeassistant/binary_sensor/VNSEMINI_0123456789ab/schedule_3_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 3 Enabled",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": false,
+      "payload_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_3_enabled",
+      "value_template": "{{ value_json.timePeriods[2].enabled }}"
+    },
+    "homeassistant/binary_sensor/VNSEMINI_0123456789ab/schedule_4_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 4 Enabled",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": false,
+      "payload_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_4_enabled",
+      "value_template": "{{ value_json.timePeriods[3].enabled }}"
+    },
+    "homeassistant/binary_sensor/VNSEMINI_0123456789ab/schedule_5_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 5 Enabled",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": false,
+      "payload_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_5_enabled",
+      "value_template": "{{ value_json.timePeriods[4].enabled }}"
+    },
+    "homeassistant/binary_sensor/VNSEMINI_0123456789ab/schedule_6_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 6 Enabled",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": false,
+      "payload_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_6_enabled",
+      "value_template": "{{ value_json.timePeriods[5].enabled }}"
+    },
+    "homeassistant/binary_sensor/VNSEMINI_0123456789ab/wifi_status/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "connectivity",
+      "icon": "mdi:wifi",
+      "name": "WiFi Status",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": false,
+      "payload_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_wifi_status",
+      "value_template": "{{ value_json.wifiStatus }}"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/factory_reset/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/factory-reset",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:delete-forever",
+      "name": "Factory Reset",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_factory_reset"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/get_ct_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/get-ct-power",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:current-ac",
+      "name": "Get CT Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_get_ct_power"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/refresh/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/refresh",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:refresh",
+      "name": "Refresh",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_refresh"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/restart/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/restart",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:restart",
+      "name": "Restart",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_restart"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/schedule_1_apply/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/1/apply",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 1 Apply",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_schedule_1_apply"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/schedule_1_reset/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/1/reset",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 1 Reset Draft",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_schedule_1_reset"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/schedule_2_apply/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/2/apply",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 2 Apply",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_schedule_2_apply"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/schedule_2_reset/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/2/reset",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 2 Reset Draft",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_schedule_2_reset"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/schedule_3_apply/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/3/apply",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 3 Apply",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_schedule_3_apply"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/schedule_3_reset/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/3/reset",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 3 Reset Draft",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_schedule_3_reset"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/schedule_4_apply/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/4/apply",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 4 Apply",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_schedule_4_apply"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/schedule_4_reset/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/4/reset",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 4 Reset Draft",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_schedule_4_reset"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/schedule_5_apply/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/5/apply",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 5 Apply",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_schedule_5_apply"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/schedule_5_reset/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/5/reset",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 5 Reset Draft",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_schedule_5_reset"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/schedule_6_apply/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/6/apply",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 6 Apply",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_schedule_6_apply"
+    },
+    "homeassistant/button/VNSEMINI_0123456789ab/schedule_6_reset/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/6/reset",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 6 Reset Draft",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_press": "PRESS",
+      "unique_id": "0123456789ab_schedule_6_reset"
+    },
+    "homeassistant/number/VNSEMINI_0123456789ab/depth_of_discharge/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/discharge-depth",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "battery",
+      "max": 90,
+      "min": 30,
+      "name": "Depth of Discharge",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "step": 1,
+      "unique_id": "0123456789ab_depth_of_discharge",
+      "unit_of_measurement": "%",
+      "value_template": "{{ value_json.dischargeDepth }}"
+    },
+    "homeassistant/number/VNSEMINI_0123456789ab/schedule_1_draft_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/1/power",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "max": 1500,
+      "min": 0,
+      "name": "Schedule Slot 1 Draft Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "step": 1,
+      "unique_id": "0123456789ab_schedule_1_draft_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.drafts[0].power }}"
+    },
+    "homeassistant/number/VNSEMINI_0123456789ab/schedule_1_power/config": null,
+    "homeassistant/number/VNSEMINI_0123456789ab/schedule_2_draft_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/2/power",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "max": 1500,
+      "min": 0,
+      "name": "Schedule Slot 2 Draft Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "step": 1,
+      "unique_id": "0123456789ab_schedule_2_draft_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.drafts[1].power }}"
+    },
+    "homeassistant/number/VNSEMINI_0123456789ab/schedule_2_power/config": null,
+    "homeassistant/number/VNSEMINI_0123456789ab/schedule_3_draft_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/3/power",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "max": 1500,
+      "min": 0,
+      "name": "Schedule Slot 3 Draft Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "step": 1,
+      "unique_id": "0123456789ab_schedule_3_draft_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.drafts[2].power }}"
+    },
+    "homeassistant/number/VNSEMINI_0123456789ab/schedule_3_power/config": null,
+    "homeassistant/number/VNSEMINI_0123456789ab/schedule_4_draft_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/4/power",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "max": 1500,
+      "min": 0,
+      "name": "Schedule Slot 4 Draft Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "step": 1,
+      "unique_id": "0123456789ab_schedule_4_draft_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.drafts[3].power }}"
+    },
+    "homeassistant/number/VNSEMINI_0123456789ab/schedule_4_power/config": null,
+    "homeassistant/number/VNSEMINI_0123456789ab/schedule_5_draft_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/5/power",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "max": 1500,
+      "min": 0,
+      "name": "Schedule Slot 5 Draft Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "step": 1,
+      "unique_id": "0123456789ab_schedule_5_draft_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.drafts[4].power }}"
+    },
+    "homeassistant/number/VNSEMINI_0123456789ab/schedule_5_power/config": null,
+    "homeassistant/number/VNSEMINI_0123456789ab/schedule_6_draft_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/6/power",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "max": 1500,
+      "min": 0,
+      "name": "Schedule Slot 6 Draft Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "step": 1,
+      "unique_id": "0123456789ab_schedule_6_draft_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.drafts[5].power }}"
+    },
+    "homeassistant/number/VNSEMINI_0123456789ab/schedule_6_power/config": null,
+    "homeassistant/select/VNSEMINI_0123456789ab/meter_type/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_template": "{% set mapping = {\"CT001\":\"ct001\",\"Shelly Pro 3EM\":\"shellyPro3em\",\"P1 Meter\":\"p1Meter\",\"CT002\":\"ct002\",\"CT003\":\"ct003\",\"Shelly EM Gen3\":\"shellyEmGen3\",\"Shelly Pro EM50\":\"shellyProEm50\",\"EcoTracker\":\"ecoTracker\",\"SMR-P1\":\"smrP1\",\"SMR-IR\":\"smrIr\",\"SMR-TIC\":\"smrTic\",\"TPM2-100CT\":\"tpm2100ct\"} %}{% set stringifiedValue = value | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}",
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/meter-type",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:meter-electric",
+      "name": "Meter Type",
+      "options": [
+        "CT001",
+        "Shelly Pro 3EM",
+        "P1 Meter",
+        "CT002",
+        "CT003",
+        "Shelly EM Gen3",
+        "Shelly Pro EM50",
+        "EcoTracker",
+        "SMR-P1",
+        "SMR-IR",
+        "SMR-TIC",
+        "TPM2-100CT"
+      ],
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "unique_id": "0123456789ab_meter_type"
+    },
+    "homeassistant/select/VNSEMINI_0123456789ab/schedule_1_direction/config": null,
+    "homeassistant/select/VNSEMINI_0123456789ab/schedule_1_draft_direction/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_template": "{% set mapping = {\"Charge\":\"charge\",\"Discharge\":\"discharge\",\"Self Consumption\":\"selfConsumption\"} %}{% set stringifiedValue = value | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}",
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/1/direction",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 1 Draft Direction",
+      "options": ["Charge", "Discharge", "Self Consumption"],
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_1_draft_direction",
+      "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\"} %}{% set stringifiedValue = value_json.drafts[0].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/select/VNSEMINI_0123456789ab/schedule_2_direction/config": null,
+    "homeassistant/select/VNSEMINI_0123456789ab/schedule_2_draft_direction/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_template": "{% set mapping = {\"Charge\":\"charge\",\"Discharge\":\"discharge\",\"Self Consumption\":\"selfConsumption\"} %}{% set stringifiedValue = value | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}",
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/2/direction",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 2 Draft Direction",
+      "options": ["Charge", "Discharge", "Self Consumption"],
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_2_draft_direction",
+      "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\"} %}{% set stringifiedValue = value_json.drafts[1].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/select/VNSEMINI_0123456789ab/schedule_3_direction/config": null,
+    "homeassistant/select/VNSEMINI_0123456789ab/schedule_3_draft_direction/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_template": "{% set mapping = {\"Charge\":\"charge\",\"Discharge\":\"discharge\",\"Self Consumption\":\"selfConsumption\"} %}{% set stringifiedValue = value | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}",
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/3/direction",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 3 Draft Direction",
+      "options": ["Charge", "Discharge", "Self Consumption"],
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_3_draft_direction",
+      "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\"} %}{% set stringifiedValue = value_json.drafts[2].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/select/VNSEMINI_0123456789ab/schedule_4_direction/config": null,
+    "homeassistant/select/VNSEMINI_0123456789ab/schedule_4_draft_direction/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_template": "{% set mapping = {\"Charge\":\"charge\",\"Discharge\":\"discharge\",\"Self Consumption\":\"selfConsumption\"} %}{% set stringifiedValue = value | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}",
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/4/direction",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 4 Draft Direction",
+      "options": ["Charge", "Discharge", "Self Consumption"],
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_4_draft_direction",
+      "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\"} %}{% set stringifiedValue = value_json.drafts[3].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/select/VNSEMINI_0123456789ab/schedule_5_direction/config": null,
+    "homeassistant/select/VNSEMINI_0123456789ab/schedule_5_draft_direction/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_template": "{% set mapping = {\"Charge\":\"charge\",\"Discharge\":\"discharge\",\"Self Consumption\":\"selfConsumption\"} %}{% set stringifiedValue = value | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}",
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/5/direction",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 5 Draft Direction",
+      "options": ["Charge", "Discharge", "Self Consumption"],
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_5_draft_direction",
+      "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\"} %}{% set stringifiedValue = value_json.drafts[4].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/select/VNSEMINI_0123456789ab/schedule_6_direction/config": null,
+    "homeassistant/select/VNSEMINI_0123456789ab/schedule_6_draft_direction/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_template": "{% set mapping = {\"Charge\":\"charge\",\"Discharge\":\"discharge\",\"Self Consumption\":\"selfConsumption\"} %}{% set stringifiedValue = value | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}",
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/6/direction",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 6 Draft Direction",
+      "options": ["Charge", "Discharge", "Self Consumption"],
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_6_draft_direction",
+      "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\"} %}{% set stringifiedValue = value_json.drafts[5].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/select/VNSEMINI_0123456789ab/working_mode/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_template": "{% set mapping = {\"Automatic\":\"automatic\",\"Manual\":\"manual\",\"AI\":\"ai\"} %}{% set stringifiedValue = value | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}",
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/working-mode",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:cog",
+      "name": "Working Mode",
+      "options": ["Automatic", "Manual", "AI"],
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_working_mode",
+      "value_template": "{% set mapping = {\"automatic\":\"Automatic\",\"manual\":\"Manual\",\"ai\":\"AI\"} %}{% set stringifiedValue = value_json.workingMode | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/backup_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Backup Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "measurement",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_backup_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.backupPower }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/battery_charged_energy_today/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "energy",
+      "name": "Battery Charged Energy Today",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "total_increasing",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_battery_charged_energy_today",
+      "unit_of_measurement": "Wh",
+      "value_template": "{{ value_json.batteryChargedEnergyToday }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/battery_charged_energy_total/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "energy",
+      "name": "Battery Charged Energy Total",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "total_increasing",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_battery_charged_energy_total",
+      "unit_of_measurement": "Wh",
+      "value_template": "{{ value_json.batteryChargedEnergyTotal }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/battery_discharged_energy_today/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "energy",
+      "name": "Battery Discharged Energy Today",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "total_increasing",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_battery_discharged_energy_today",
+      "unit_of_measurement": "Wh",
+      "value_template": "{{ value_json.batteryDischargedEnergyToday }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/battery_discharged_energy_total/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "energy",
+      "name": "Battery Discharged Energy Total",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "total_increasing",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_battery_discharged_energy_total",
+      "unit_of_measurement": "Wh",
+      "value_template": "{{ value_json.batteryDischargedEnergyTotal }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/battery_energy_stored/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "energy_storage",
+      "name": "Battery Energy Stored",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "measurement",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_battery_energy_stored",
+      "unit_of_measurement": "Wh",
+      "value_template": "{{ value_json.batteryEnergyStored }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/battery_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Battery Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "measurement",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_battery_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.batteryPower }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/battery_soc/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "battery",
+      "name": "Battery State of Charge",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "measurement",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_battery_soc",
+      "unit_of_measurement": "%",
+      "value_template": "{{ value_json.batterySoc }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/bluetooth_lock_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:bluetooth",
+      "name": "Bluetooth Lock (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_bluetooth_lock_raw",
+      "value_template": "{{ value_json.bluetoothLockRaw }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/ct_phase/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:sine-wave",
+      "name": "CT Phase",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_ct_phase",
+      "value_template": "{{ value_json.ctPhase }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/ct_type/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:current-ac",
+      "name": "CT Type",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_ct_type",
+      "value_template": "{{ value_json.ctType }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/dcdc_firmware_version/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:information",
+      "name": "DCDC Firmware Version",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_dcdc_firmware_version",
+      "value_template": "{{ value_json.dcdcFirmwareVersion }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/device_state/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:state-machine",
+      "name": "Device State",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_device_state",
+      "value_template": "{% set mapping = {\"standby\":\"Standby\",\"charging\":\"Charging\",\"discharging\":\"Discharging\",\"bypass\":\"Bypass\",\"fault\":\"Fault\",\"unknown\":\"Unknown\"} %}{% set stringifiedValue = value_json.deviceState | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/device_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "timestamp",
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Device Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_device_time",
+      "value_template": "{{ value_json.deviceTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/feed_in_power_limit/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:transmission-tower-export",
+      "name": "Feed-in Power Limit",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_feed_in_power_limit",
+      "value_template": "{% set mapping = {\"800W\":\"800 W\",\"1500W\":\"1500 W\",\"unknown\":\"Unknown\"} %}{% set stringifiedValue = value_json.feedInPowerLimit | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/grid_exported_energy_today/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "energy",
+      "name": "Grid Exported Energy Today",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "total_increasing",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_grid_exported_energy_today",
+      "unit_of_measurement": "Wh",
+      "value_template": "{{ value_json.gridExportedEnergyToday }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/grid_imported_energy_today/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "energy",
+      "name": "Grid Imported Energy Today",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "total_increasing",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_grid_imported_energy_today",
+      "unit_of_measurement": "Wh",
+      "value_template": "{{ value_json.gridImportedEnergyToday }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/grid_imported_energy_total/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "energy",
+      "name": "Grid Imported Energy Total",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "total_increasing",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_grid_imported_energy_total",
+      "unit_of_measurement": "Wh",
+      "value_template": "{{ value_json.gridImportedEnergyTotal }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/grid_mode/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Grid Mode",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_grid_mode",
+      "value_template": "{{ value_json.gridMode }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/grid_power_alt/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "enabled_by_default": false,
+      "name": "Grid Power (Alt)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "measurement",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_grid_power_alt",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.gridPowerAlt }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/grid_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Grid Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "measurement",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_grid_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.gridPower }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/inverter_firmware_version/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:information",
+      "name": "Inverter Firmware Version",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_inverter_firmware_version",
+      "value_template": "{{ value_json.inverterFirmwareVersion }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/inverter_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "enabled_by_default": false,
+      "name": "Inverter Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "measurement",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_inverter_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.inverterPower }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/load_consumed_energy_today/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "energy",
+      "name": "Load Consumed Energy Today",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "total_increasing",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_load_consumed_energy_today",
+      "unit_of_measurement": "Wh",
+      "value_template": "{{ value_json.loadConsumedEnergyToday }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/load_state/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Load State",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_load_state",
+      "value_template": "{{ value_json.loadState }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/phase_a_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Phase A Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "measurement",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/ct",
+      "unique_id": "0123456789ab_phase_a_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.phaseAPower }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/phase_b_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Phase B Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "measurement",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/ct",
+      "unique_id": "0123456789ab_phase_b_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.phaseBPower }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/phase_c_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Phase C Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "measurement",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/ct",
+      "unique_id": "0123456789ab_phase_c_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.phaseCPower }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/pmu_firmware_version/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:information",
+      "name": "PMU Firmware Version",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_pmu_firmware_version",
+      "value_template": "{{ value_json.pmuFirmwareVersion }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/recharge_type/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Recharge Type",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_recharge_type",
+      "value_template": "{{ value_json.rechargeType }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_1_direction/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:swap-vertical",
+      "name": "Schedule Slot 1 Direction",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_1_direction",
+      "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\",\"unknown\":\"Unknown\"} %}{% set stringifiedValue = value_json.timePeriods[0].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_1_end_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 1 End Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_1_end_time",
+      "value_template": "{{ value_json.timePeriods[0].endTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_1_mode_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Schedule Slot 1 Mode (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_1_mode_raw",
+      "value_template": "{{ value_json.timePeriods[0].modeRaw }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_1_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Schedule Slot 1 Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_1_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.timePeriods[0].power }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_1_start_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 1 Start Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_1_start_time",
+      "value_template": "{{ value_json.timePeriods[0].startTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_1_weekday/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:calendar-week",
+      "name": "Schedule Slot 1 Weekday",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_1_weekday",
+      "value_template": "{{ value_json.timePeriods[0].weekday }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_2_direction/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:swap-vertical",
+      "name": "Schedule Slot 2 Direction",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_2_direction",
+      "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\",\"unknown\":\"Unknown\"} %}{% set stringifiedValue = value_json.timePeriods[1].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_2_end_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 2 End Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_2_end_time",
+      "value_template": "{{ value_json.timePeriods[1].endTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_2_mode_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Schedule Slot 2 Mode (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_2_mode_raw",
+      "value_template": "{{ value_json.timePeriods[1].modeRaw }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_2_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Schedule Slot 2 Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_2_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.timePeriods[1].power }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_2_start_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 2 Start Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_2_start_time",
+      "value_template": "{{ value_json.timePeriods[1].startTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_2_weekday/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:calendar-week",
+      "name": "Schedule Slot 2 Weekday",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_2_weekday",
+      "value_template": "{{ value_json.timePeriods[1].weekday }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_3_direction/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:swap-vertical",
+      "name": "Schedule Slot 3 Direction",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_3_direction",
+      "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\",\"unknown\":\"Unknown\"} %}{% set stringifiedValue = value_json.timePeriods[2].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_3_end_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 3 End Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_3_end_time",
+      "value_template": "{{ value_json.timePeriods[2].endTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_3_mode_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Schedule Slot 3 Mode (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_3_mode_raw",
+      "value_template": "{{ value_json.timePeriods[2].modeRaw }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_3_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Schedule Slot 3 Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_3_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.timePeriods[2].power }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_3_start_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 3 Start Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_3_start_time",
+      "value_template": "{{ value_json.timePeriods[2].startTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_3_weekday/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:calendar-week",
+      "name": "Schedule Slot 3 Weekday",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_3_weekday",
+      "value_template": "{{ value_json.timePeriods[2].weekday }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_4_direction/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:swap-vertical",
+      "name": "Schedule Slot 4 Direction",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_4_direction",
+      "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\",\"unknown\":\"Unknown\"} %}{% set stringifiedValue = value_json.timePeriods[3].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_4_end_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 4 End Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_4_end_time",
+      "value_template": "{{ value_json.timePeriods[3].endTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_4_mode_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Schedule Slot 4 Mode (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_4_mode_raw",
+      "value_template": "{{ value_json.timePeriods[3].modeRaw }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_4_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Schedule Slot 4 Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_4_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.timePeriods[3].power }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_4_start_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 4 Start Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_4_start_time",
+      "value_template": "{{ value_json.timePeriods[3].startTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_4_weekday/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:calendar-week",
+      "name": "Schedule Slot 4 Weekday",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_4_weekday",
+      "value_template": "{{ value_json.timePeriods[3].weekday }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_5_direction/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:swap-vertical",
+      "name": "Schedule Slot 5 Direction",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_5_direction",
+      "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\",\"unknown\":\"Unknown\"} %}{% set stringifiedValue = value_json.timePeriods[4].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_5_end_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 5 End Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_5_end_time",
+      "value_template": "{{ value_json.timePeriods[4].endTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_5_mode_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Schedule Slot 5 Mode (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_5_mode_raw",
+      "value_template": "{{ value_json.timePeriods[4].modeRaw }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_5_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Schedule Slot 5 Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_5_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.timePeriods[4].power }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_5_start_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 5 Start Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_5_start_time",
+      "value_template": "{{ value_json.timePeriods[4].startTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_5_weekday/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:calendar-week",
+      "name": "Schedule Slot 5 Weekday",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_5_weekday",
+      "value_template": "{{ value_json.timePeriods[4].weekday }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_6_direction/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:swap-vertical",
+      "name": "Schedule Slot 6 Direction",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_6_direction",
+      "value_template": "{% set mapping = {\"charge\":\"Charge\",\"discharge\":\"Discharge\",\"selfConsumption\":\"Self Consumption\",\"unknown\":\"Unknown\"} %}{% set stringifiedValue = value_json.timePeriods[5].direction | string %}{% if stringifiedValue in mapping %}{{ mapping[stringifiedValue] }}{% else %}{{ stringifiedValue }}{% endif %}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_6_end_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 6 End Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_6_end_time",
+      "value_template": "{{ value_json.timePeriods[5].endTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_6_mode_raw/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Schedule Slot 6 Mode (Raw)",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_6_mode_raw",
+      "value_template": "{{ value_json.timePeriods[5].modeRaw }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_6_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Schedule Slot 6 Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_6_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.timePeriods[5].power }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_6_start_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Schedule Slot 6 Start Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_6_start_time",
+      "value_template": "{{ value_json.timePeriods[5].startTime }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_6_weekday/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:calendar-week",
+      "name": "Schedule Slot 6 Weekday",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_schedule_6_weekday",
+      "value_template": "{{ value_json.timePeriods[5].weekday }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_error/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "name": "Schedule Control Error",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_error",
+      "value_template": "{{ value_json.lastError }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/schedule_status/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "name": "Schedule Control Status",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_status",
+      "value_template": "{{ value_json.status }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/server_state/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:help-circle-outline",
+      "name": "Server State",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_server_state",
+      "value_template": "{{ value_json.serverState }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/timestamp/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "timestamp",
+      "icon": "mdi:clock-time-four-outline",
+      "name": "Last Update",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_timestamp",
+      "value_template": "{{ value_json.timestamp }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/total_phase_power/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "power",
+      "name": "Total CT Power",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "measurement",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/ct",
+      "unique_id": "0123456789ab_total_phase_power",
+      "unit_of_measurement": "W",
+      "value_template": "{{ value_json.totalPhasePower }}"
+    },
+    "homeassistant/sensor/VNSEMINI_0123456789ab/wifi_signal/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "device_class": "signal_strength",
+      "icon": "mdi:wifi",
+      "name": "WiFi Signal",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "state_class": "measurement",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/data",
+      "unique_id": "0123456789ab_wifi_signal",
+      "unit_of_measurement": "dBm",
+      "value_template": "{{ value_json.wifiSignal }}"
+    },
+    "homeassistant/switch/VNSEMINI_0123456789ab/bluetooth_advertising/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/bluetooth-advertising",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "icon": "mdi:bluetooth",
+      "name": "Bluetooth Advertising",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": "false",
+      "payload_on": "true",
+      "state_off": false,
+      "state_on": true,
+      "unique_id": "0123456789ab_bluetooth_advertising"
+    },
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_1_draft_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/1/enabled",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 1 Draft Enabled",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": "false",
+      "payload_on": "true",
+      "state_off": false,
+      "state_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_1_draft_enabled",
+      "value_template": "{{ value_json.drafts[0].enabled }}"
+    },
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_1_enabled/config": null,
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_2_draft_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/2/enabled",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 2 Draft Enabled",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": "false",
+      "payload_on": "true",
+      "state_off": false,
+      "state_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_2_draft_enabled",
+      "value_template": "{{ value_json.drafts[1].enabled }}"
+    },
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_2_enabled/config": null,
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_3_draft_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/3/enabled",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 3 Draft Enabled",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": "false",
+      "payload_on": "true",
+      "state_off": false,
+      "state_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_3_draft_enabled",
+      "value_template": "{{ value_json.drafts[2].enabled }}"
+    },
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_3_enabled/config": null,
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_4_draft_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/4/enabled",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 4 Draft Enabled",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": "false",
+      "payload_on": "true",
+      "state_off": false,
+      "state_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_4_draft_enabled",
+      "value_template": "{{ value_json.drafts[3].enabled }}"
+    },
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_4_enabled/config": null,
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_5_draft_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/5/enabled",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 5 Draft Enabled",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": "false",
+      "payload_on": "true",
+      "state_off": false,
+      "state_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_5_draft_enabled",
+      "value_template": "{{ value_json.drafts[4].enabled }}"
+    },
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_5_enabled/config": null,
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_6_draft_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/6/enabled",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 6 Draft Enabled",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": "false",
+      "payload_on": "true",
+      "state_off": false,
+      "state_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_6_draft_enabled",
+      "value_template": "{{ value_json.drafts[5].enabled }}"
+    },
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_6_enabled/config": null,
+    "homeassistant/switch/VNSEMINI_0123456789ab/schedule_controls_enabled/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/controls-enabled",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Experimental Schedule Controls",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "payload_off": "false",
+      "payload_on": "true",
+      "state_off": false,
+      "state_on": true,
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_controls_enabled",
+      "value_template": "{{ value_json.controlsEnabled }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/meter_mac/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/meter-mac",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "icon": "mdi:identifier",
+      "name": "Meter MAC",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^[0-9A-Fa-f]{12}$",
+      "unique_id": "0123456789ab_meter_mac"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_1_draft_end_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/1/end-time",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 1 Draft End Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_1_draft_end_time",
+      "value_template": "{{ value_json.drafts[0].endTime }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_1_draft_start_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/1/start-time",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 1 Draft Start Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_1_draft_start_time",
+      "value_template": "{{ value_json.drafts[0].startTime }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_1_draft_weekday/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/1/weekday",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 1 Draft Weekdays",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^0?1?2?3?4?5?6?$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_1_draft_weekday",
+      "value_template": "{{ value_json.drafts[0].weekday }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_1_end_time/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_1_start_time/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_1_weekday/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_2_draft_end_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/2/end-time",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 2 Draft End Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_2_draft_end_time",
+      "value_template": "{{ value_json.drafts[1].endTime }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_2_draft_start_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/2/start-time",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 2 Draft Start Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_2_draft_start_time",
+      "value_template": "{{ value_json.drafts[1].startTime }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_2_draft_weekday/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/2/weekday",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 2 Draft Weekdays",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^0?1?2?3?4?5?6?$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_2_draft_weekday",
+      "value_template": "{{ value_json.drafts[1].weekday }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_2_end_time/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_2_start_time/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_2_weekday/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_3_draft_end_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/3/end-time",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 3 Draft End Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_3_draft_end_time",
+      "value_template": "{{ value_json.drafts[2].endTime }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_3_draft_start_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/3/start-time",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 3 Draft Start Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_3_draft_start_time",
+      "value_template": "{{ value_json.drafts[2].startTime }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_3_draft_weekday/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/3/weekday",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 3 Draft Weekdays",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^0?1?2?3?4?5?6?$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_3_draft_weekday",
+      "value_template": "{{ value_json.drafts[2].weekday }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_3_end_time/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_3_start_time/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_3_weekday/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_4_draft_end_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/4/end-time",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 4 Draft End Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_4_draft_end_time",
+      "value_template": "{{ value_json.drafts[3].endTime }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_4_draft_start_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/4/start-time",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 4 Draft Start Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_4_draft_start_time",
+      "value_template": "{{ value_json.drafts[3].startTime }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_4_draft_weekday/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/4/weekday",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 4 Draft Weekdays",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^0?1?2?3?4?5?6?$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_4_draft_weekday",
+      "value_template": "{{ value_json.drafts[3].weekday }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_4_end_time/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_4_start_time/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_4_weekday/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_5_draft_end_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/5/end-time",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 5 Draft End Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_5_draft_end_time",
+      "value_template": "{{ value_json.drafts[4].endTime }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_5_draft_start_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/5/start-time",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 5 Draft Start Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_5_draft_start_time",
+      "value_template": "{{ value_json.drafts[4].startTime }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_5_draft_weekday/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/5/weekday",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 5 Draft Weekdays",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^0?1?2?3?4?5?6?$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_5_draft_weekday",
+      "value_template": "{{ value_json.drafts[4].weekday }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_5_end_time/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_5_start_time/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_5_weekday/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_6_draft_end_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/6/end-time",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 6 Draft End Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_6_draft_end_time",
+      "value_template": "{{ value_json.drafts[5].endTime }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_6_draft_start_time/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/6/start-time",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 6 Draft Start Time",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_6_draft_start_time",
+      "value_template": "{{ value_json.drafts[5].startTime }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_6_draft_weekday/config": {
+      "availability": [
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/availability"
+        },
+        {
+          "payload_available": "online",
+          "payload_not_available": "offline",
+          "topic": "hm2mqtt/VNSEMINI/availability/0123456789ab"
+        }
+      ],
+      "command_topic": "hm2mqtt/VNSEMINI/control/0123456789ab/schedule/6/weekday",
+      "device": {
+        "connections": [["bluetooth", "01:23:45:67:89:AB"]],
+        "ids": ["hame_energy_0123456789ab"],
+        "manufacturer": "HAME Energy",
+        "model_id": "VNSEMINI",
+        "name": "HAME Energy VNSEMINI 0123456789ab"
+      },
+      "enabled_by_default": false,
+      "name": "Schedule Slot 6 Draft Weekdays",
+      "origin": {
+        "name": "hm2mqtt",
+        "url": "https://github.com/tomquist/hm2mqtt"
+      },
+      "pattern": "^0?1?2?3?4?5?6?$",
+      "state_topic": "hm2mqtt/VNSEMINI/device/0123456789ab/schedule",
+      "unique_id": "0123456789ab_schedule_6_draft_weekday",
+      "value_template": "{{ value_json.drafts[5].weekday }}"
+    },
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_6_end_time/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_6_start_time/config": null,
+    "homeassistant/text/VNSEMINI_0123456789ab/schedule_6_weekday/config": null
+  }
+}

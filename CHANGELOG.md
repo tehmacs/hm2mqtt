@@ -6,9 +6,12 @@
 - Support the `VNSEMINI-X` device type (e.g. `VNSEMINI-0`): the Marstek Venus E Mini, including experimental manual schedules prepared as drafts and applied only after safety checks and device confirmation. Some readings and controls remain unconfirmed, so both may still change (discussion #425, PR #429, PR #430, PR #433, PR #437, PR #438)
 - Venus: New *Battery Health* sensor, showing the battery's state of health. Reported by control firmware 149.2 and later, so it appears only on devices new enough to send it (PR #437)
 - Venus: Further readings the device sends but nobody has a meaning for yet are now published as diagnostic sensors, disabled by default. If you work out what one of them means, please say so (PR #437)
+- B2500, Venus & Jupiter: The *Meter Type* select now also offers the P1 Meter and Marstek's SMR-P1, SMR-IR, SMR-TIC and TPM2-100CT meters (PR #449)
+- B2500, Venus & Jupiter: The *CT Type* sensor now also recognises those meters and the CT001.5. On Jupiter it names the meter instead of showing a number (PR #449)
 
 ### Fixed
 
+- Venus: The *CT Type* sensor showed the wrong meter on the Venus E 3.0, Venus A and Venus D. A CT003, for example, showed up as "Shelly Pro". The sensor now reads the meter type correctly on every Venus model and names the meter by its model, e.g. "CT003" or "Shelly Pro 3EM" (fixes #354, PR #448)
 - The MQTT broker password no longer shows up in the log. On startup, the broker URL was written to the log with its credentials in plaintext, which meant sharing a log for troubleshooting could hand out the broker password. In the Home Assistant add-on this affected the password of Home Assistant's own MQTT broker. Broker URLs now appear as `mqtt://user:***@host:1883` (fixes #424, PR #435)
 
 ## [1.10.0] - 2026-08-15
